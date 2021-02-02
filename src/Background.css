@@ -1,0 +1,8 @@
+.background {
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    min-height: 10vh;
+    background: rgb(154, 206, 219);
+    color: rgb(3, 3, 3);
+}
