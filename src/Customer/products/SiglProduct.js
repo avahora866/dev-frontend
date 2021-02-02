@@ -6,7 +6,7 @@ function decrease() {
 }
 
 function increase() {
-    console.log(document.getElementById("numOfProd").value);
+    console.log("Hello");
 }
 
 function SiglProduct({product}) {
