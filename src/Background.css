@@ -1,8 +1,7 @@
 .background {
     display: flex;
-    justify-content: space-around;
-    align-items:center;
-    min-height: 10vh;
+    justify-content: center;
+    min-height:38.1vw;
     background: rgb(154, 206, 219);
     color: rgb(3, 3, 3);
 }

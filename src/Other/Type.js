@@ -5,7 +5,7 @@ import Navigation from './Navigation';
 
 function Type() {
     return (
-        <div><Navigation />
+        <body><Navigation />
         <div className = "background">
             <Link to='/CustomerRegistration'>
                 <button>Customer</button>
@@ -14,7 +14,7 @@ function Type() {
                 <button>Employee</button> 
             </Link>
         </div>
-        </div>
+        </body>
     )
 }
 

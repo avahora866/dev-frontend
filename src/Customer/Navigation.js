@@ -4,25 +4,26 @@ import {Link} from 'react-router-dom';
 
 function Navigation() {
     return (
-        <div>
-            <nav>
-                <h3> <img src="/images/milk.jpeg" alt="Brand" /> </h3>
-                <ul className = "nav-links">
-                    <Link className = "nav-link-style" to = '/Order'>
-                        <li>Order</li>
-                    </Link>
-                    <Link className = "nav-link-style" to = 'Trolly'>
-                        <li>Trolly</li>
-                    </Link>
-                    <Link className = "nav-link-style" to = 'Products'>
-                        <li>Products</li>
-                    </Link>
-                    <Link className = "nav-link-style" to = '/'>
-                        <li>Sign out</li>
-                    </Link>
-                </ul>
-            </nav>
-        </div>
+        <nav>
+            <span>
+                <img src="/images/milk.jpeg" alt="Brand"/> 
+                <h3>Milk4U</h3>
+            </span>
+            <ul>
+                <Link to = '/Order'>
+                    <li>Order</li>
+                </Link>
+                <Link to = 'Trolly'>
+                    <li>Trolly</li>
+                </Link>
+                <Link to = 'Products'>
+                    <li>Products</li>
+                </Link>
+                <Link to = '/'>
+                    <li>Sign out</li>
+                </Link>
+            </ul>
+        </nav>
     )
 }
 

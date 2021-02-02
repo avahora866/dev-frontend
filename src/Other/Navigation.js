@@ -3,11 +3,12 @@ import '../Navigation.css'
 
 function Navigation() {
     return (
-        <div>
-            <nav>
-                <h3> <img src="/images/milk.jpeg" alt="Brand"/> </h3>
-            </nav>
-        </div>
+        <nav>
+            <span>
+                <img src="/images/milk.jpeg" alt="Brand"/> 
+                <h3>Milk4U</h3>
+            </span>
+        </nav>
     )
 }
 
