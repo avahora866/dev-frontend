@@ -1,7 +1,6 @@
 import React from 'react'
 import SiglProduct from './SiglProduct'
 import './Order.css'
-import '../../Background.css'
 import Navigation from '../Navigation';
 
 
@@ -29,7 +28,7 @@ function Order() {
         const prodList = prod.map(product => <SiglProduct key = {product.id} product = {product} />)
     return (
         <div><Navigation />
-        <div className = "background">
+        <div >
             <div >{prodList}</div>
             <p><button>Cancel Order</button>&nbsp;&nbsp;<label>Total Price</label></p>
         </div>

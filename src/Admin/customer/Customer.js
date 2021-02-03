@@ -1,6 +1,5 @@
 import React from 'react'
 import SiglCst from './SiglCst'
-import '../../Background.css'
 import Navigation from '../Navigation';
 
 function Customer() {
@@ -37,7 +36,7 @@ function Customer() {
     return (
         <div><Navigation />
         <div>
-            <div className = "background">{register}</div>
+            <div >{register}</div>
         </div>
         </div>
     )

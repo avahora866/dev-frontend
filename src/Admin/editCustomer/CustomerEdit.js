@@ -1,13 +1,12 @@
 import React from 'react'
 import MyForm from './MyForm'
 import {Link} from 'react-router-dom';
-import '../../Background.css'
 import Navigation from '../Navigation';
 
 function CustomerEdit() {
     return (
         <div><Navigation />
-        <div className = "background">
+        <div >
             <form>
                 <p><label>CustomerID</label></p>
                 <p>

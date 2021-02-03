@@ -10,8 +10,8 @@ import Order from './Customer/currentOrder/Order'
 import Products from './Customer/products/Products';
 import Trolly from './Customer/trolly/Trolly';
 import EmployeeRegistration from './Other/empReg-C,D/EmployeeRegistration'
-import LoginPage from './Other/LoginPage'
-import Type from './Other/Type'
+import LoginPage from './Other/loginPage/LoginPage'
+import Type from './Other/typeOfUser/Type'
 import CustomerRegistration from './Other/customerReg/CustomerRegistration';
 
 function App() {

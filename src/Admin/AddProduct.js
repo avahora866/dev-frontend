@@ -1,13 +1,12 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
-import '../Background.css'
 import Navigation from './Navigation';
 
 
 function AddProduct() {
     return (
         <div><Navigation />
-        <div className = "background">
+        <div >
             <form>
                 <p>
                     <label>Name

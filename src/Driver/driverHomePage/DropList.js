@@ -1,6 +1,5 @@
 import React from 'react'
 import Orders from './Orders'
-import '../../Background.css'
 import Navigation from './Navigation'
 
 function DropList() {
@@ -24,7 +23,7 @@ function DropList() {
         const orderList = orders.map(order => <Orders key = {order.id} order = {order} />)
     return (
         <div><Navigation />
-        <div className="background">
+        <div>
             <div >{orderList}</div>
             <p><button>Print Droplist</button></p>
         </div>

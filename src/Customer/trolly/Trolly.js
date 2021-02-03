@@ -1,6 +1,5 @@
 import React from 'react'
 import SiglProduct from './SiglProduct'
-import '../../Background.css'
 import Navigation from '../Navigation';
 
 function Trolly() {
@@ -27,7 +26,7 @@ function Trolly() {
         const prodList = prod.map(product => <SiglProduct key = {product.id} product = {product} />)
     return (
         <div><Navigation />
-        <div className = "background">
+        <div >
             <div>{prodList}</div>
             <p><button>Cancel</button><button>Create order</button><button>Add to order</button>&nbsp;&nbsp;<br /><label>Total Price</label></p>
         </div>

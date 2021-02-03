@@ -1,7 +1,6 @@
 import React from 'react'
 import Martian from './Martian'
 import {Link} from 'react-router-dom';
-import '../../Background.css'
 import Navigation from '../Navigation';
 
 
@@ -9,31 +8,20 @@ import Navigation from '../Navigation';
 function EmployeeRegistration() {
     return (
         <div><Navigation />
-        <div className = "background">
+        <div >
              <form>
-                <label>Name:
-                    <br /><input type="text" name="Name" />
-                </label>
-                <br />
-                <label>Email:
-                    <br /><input type="text" name="Email" />
-                </label>
-                <br />
-                <label>Username:
-                    <br /><input type="text" name="Username" />
-                </label>
-                <br />
-                <label>Password:
-                    <br /><input type="text" name="Password" />
-                </label>
-                <br />
-                <label>Type:
-                    <br /><Martian />
-                </label>
-                <label>Area:
-                    <br /><input type="text" name="Area" />
-                </label>
-                <br />
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" />  
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" />
+                <label for="uName">Username:</label>
+                <input type="text" id="uName" name="uName" />
+                <label for="pass">Password:</label>
+                <input type="text" id="pass" name="pass" />
+                <label for="type">Type:</label>
+                <Martian />
+                <label for="area">Area: Only for Drivers</label>
+                <input type="text" id="area" name="area" />
                 <Link to = '/Customers'>
                     <input type="submit" value="Create Account" />
                 </Link>

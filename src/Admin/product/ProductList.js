@@ -1,7 +1,6 @@
 import React from 'react'
 import SiglProduct from './SiglProduct'
 import {Link} from 'react-router-dom';
-import '../../Background.css'
 import Navigation from '../Navigation';
 
 function ProductList() {
@@ -28,7 +27,7 @@ function ProductList() {
         const prodList = prod.map(product => <SiglProduct key = {product.id} product = {product} />)
     return (
         <div><Navigation />
-        <div className = "background">
+        <div >
             <div>{prodList}</div>
             <Link to = '/AddProducts'>
                 <p><button>Add Product</button></p>
