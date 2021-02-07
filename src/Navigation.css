@@ -5,12 +5,12 @@ nav{
     justify-content: space-between;
 }
 
-span {
+span{
     display: flex;
     flex-direction: row;
 }
 
-img {
+img{
     max-height: 5em;
     border-radius: 50%;
     padding: 0.5em 0.5em 0.5em 0.5em;

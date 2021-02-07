@@ -5,9 +5,9 @@ import {Link} from 'react-router-dom';
 
 function Navigation() {
     return (
-        <nav>
-            <span>
-                <img src="/images/milk.jpeg" alt="Brand"/> 
+        <nav >
+            <span > 
+                <img src="/images/milk.jpeg" alt="Brand" /> 
                 <h3>Milk4U</h3>
             </span>
             <ul>
