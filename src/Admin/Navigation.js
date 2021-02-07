@@ -10,10 +10,16 @@ function Navigation() {
             </span>
             <ul>
                 <Link to = '/Customers'>
-                    <li>Customer</li>
+                    <li>Customers</li>
+                </Link>
+                <Link to = '/Admins'>
+                    <li>Admins</li>
+                </Link>
+                <Link to = '/Drivers'>
+                    <li>Drivers</li>
                 </Link>
                 <Link to = '/ProductList'>
-                    <li>Product</li>
+                    <li>Products</li>
                 </Link>
                 <Link to = '/'>
                     <li>Sign out</li>

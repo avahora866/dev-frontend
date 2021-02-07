@@ -1,9 +1,9 @@
 import './App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import AddProduct from './Admin/AddProduct';
-import EditProduct from './Admin/EditProduct';
+import AddProduct from './Admin/product/AddProduct';
+import EditProduct from './Admin/product/EditProduct';
 import ProductList from './Admin/product/ProductList';
-import CustomerEdit from './Admin/editCustomer/CustomerEdit';
+import CustomerEdit from './Admin/customer/editCustomer/CustomerEdit';
 import Customer from './Admin/customer/Customer'
 import DropList from './Driver/driverHomePage/DropList'
 import Order from './Customer/currentOrder/Order'
@@ -13,6 +13,8 @@ import EmployeeRegistration from './Other/empReg-C,D/EmployeeRegistration'
 import LoginPage from './Other/loginPage/LoginPage'
 import Type from './Other/typeOfUser/Type'
 import CustomerRegistration from './Other/customerReg/CustomerRegistration';
+import Admins from './Admin/admin/Admins';
+import Drivers from './Admin/driver/Drivers';
 
 function App() {
   return (
@@ -35,6 +37,8 @@ function App() {
           <Route path= "/EditProducts" component={EditProduct} />
           <Route path= "/AddProducts" component={AddProduct} />
           <Route path= "/Droplist" component={DropList} />
+          <Route path="/Admins" component={Admins} />
+          <Route path="/Drivers" component={Drivers} />
         </Switch>
 
       {/* <DropList /> */}

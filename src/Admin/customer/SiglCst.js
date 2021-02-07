@@ -16,6 +16,7 @@ function SiglCst({customer}) {
                 <Link to = '/EditCustomer'>
                     <p><button>Edit</button></p>
                 </Link>
+                <button>Remove</button>
             </p>
         </div>
     )
