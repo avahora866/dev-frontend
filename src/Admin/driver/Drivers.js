@@ -1,6 +1,7 @@
 import React from 'react'
 import SingleDriver from './SingleDriver'
 import Navigation from '../Navigation';
+import {Link} from 'react-router-dom';
 
 function Drivers() {
     const driverList = [
@@ -31,6 +32,9 @@ function Drivers() {
         <div><Navigation />
         <div>
             <div >{register}</div>
+            <Link to='/AddDriver'>
+                <button>Add</button>
+            </Link>
         </div>
         </div>
     )

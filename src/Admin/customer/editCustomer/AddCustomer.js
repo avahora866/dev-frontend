@@ -1,9 +1,9 @@
 import React from 'react'
-import MyForm from './MyForm'
 import {Link} from 'react-router-dom';
 import Navigation from '../../Navigation';
+import MyForm from './MyForm'
 
-function CustomerEdit() {
+function AddCustomer() {
     return (
         <div><Navigation />
             <form>
@@ -26,4 +26,4 @@ function CustomerEdit() {
     )
 }
 
-export default CustomerEdit
+export default AddCustomer

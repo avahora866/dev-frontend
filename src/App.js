@@ -15,6 +15,11 @@ import Type from './Other/typeOfUser/Type'
 import CustomerRegistration from './Other/customerReg/CustomerRegistration';
 import Admins from './Admin/admin/Admins';
 import Drivers from './Admin/driver/Drivers';
+import EditAdmins from './Admin/admin/EditAdmins';
+import EditDrivers from './Admin/driver/EditDrivers';
+import AddAdmin from './Admin/admin/AddAdmin';
+import AddDriver from './Admin/driver/AddDrivers';
+import AddCustomer from './Admin/customer/editCustomer/AddCustomer';
 
 function App() {
   return (
@@ -39,6 +44,11 @@ function App() {
           <Route path= "/Droplist" component={DropList} />
           <Route path="/Admins" component={Admins} />
           <Route path="/Drivers" component={Drivers} />
+          <Route path="/EditAdmins" component={EditAdmins}/>
+          <Route path="/EditDrivers" component={EditDrivers}/>
+          <Route path="/AddAdmin" component={AddAdmin} />
+          <Route path="/AddDriver" component={AddDriver}/>
+          <Route path="/AddCustomer" component={AddCustomer}/>
         </Switch>
 
       {/* <DropList /> */}

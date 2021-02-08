@@ -11,9 +11,10 @@ function SingleAdmin({admin}) {
                 Email: {admin.email} &nbsp;
                 Username: {admin.username} &nbsp;
                 Password: {admin.password} &nbsp;
-                {/* <Link to = '/EditCustomer'>
+                <Link to = '/EditAdmins'>
                     <p><button>Edit</button></p>
-                </Link> */}
+                </Link>
+                <button>Remove</button>
             </p>
         </div>
     )

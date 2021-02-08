@@ -11,9 +11,10 @@ function SingleDriver({driver}) {
                 Email: {driver.email} &nbsp;
                 Username: {driver.username} &nbsp;
                 Password: {driver.password} &nbsp;
-                {/* <Link to = '/EditCustomer'>
+                <Link to = '/EditDrivers'>
                     <p><button>Edit</button></p>
-                </Link> */}
+                </Link>
+                <button>Remove</button>
             </p>
         </div>
     )

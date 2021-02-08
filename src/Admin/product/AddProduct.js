@@ -6,30 +6,17 @@ import Navigation from '../Navigation';
 function AddProduct() {
     return (
         <div><Navigation />
-        <div >
             <form>
-                <p>
-                    <label>Name
-                        <input type="text" name="Name" />
-                    </label>
-                </p>
-                <p>
-                    <label>Description
-                        <input type="text" name="Name" />
-                    </label>
-                </p>
-                <p>
-                    <label>Price
-                        <input type="price" name="Name" />
-                    </label>
-                </p>
-                <p>
-                    <Link to = "/ProductList">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" /> 
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description" /> 
+                <label for="price">Price:</label>
+                <input type="text" id="price" name="price" /> 
+                <Link to = "/ProductList">
                     <input type="submit" value="Add" />
-                    </Link>
-                </p>
+                </Link>
             </form>
-        </div>
         </div>
     )
 }

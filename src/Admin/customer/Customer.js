@@ -1,6 +1,8 @@
 import React from 'react'
 import SiglCst from './SiglCst'
 import Navigation from '../Navigation';
+import {Link} from 'react-router-dom';
+
 
 function Customer() {
     const cst = [
@@ -37,6 +39,9 @@ function Customer() {
         <div><Navigation />
         <div>
             <div >{register}</div>
+            <Link to='/AddCustomer'>
+                <button>Add Customer</button>
+            </Link>
         </div>
         </div>
     )

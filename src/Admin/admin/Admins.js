@@ -1,6 +1,7 @@
 import React from 'react'
 import SingleAdmin from './SingleAdmin'
 import Navigation from '../Navigation';
+import {Link} from 'react-router-dom';
 
 function Admins() {
     const adminList = [
@@ -30,7 +31,10 @@ function Admins() {
     return (
         <div><Navigation />
         <div>
-            <div >{register}</div>
+            <div>{register}</div>
+            <Link to='/AddAdmin'>
+                <button>Add</button>
+            </Link>
         </div>
         </div>
     )
