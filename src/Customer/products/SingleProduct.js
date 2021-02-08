@@ -9,7 +9,7 @@ function increase() {
     console.log("Hello");
 }
 
-function SiglProduct({product}) {
+function SingleProduct({product}) {
     return (
         <div>
             <p>
@@ -25,4 +25,4 @@ function SiglProduct({product}) {
 
 
 
-export default SiglProduct
+export default SingleProduct

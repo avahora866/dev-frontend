@@ -1,5 +1,5 @@
 import React from 'react'
-import SiglCst from './SiglCst'
+import SingleCustomer from './SingleCustomer'
 import Navigation from '../Navigation';
 import {Link} from 'react-router-dom';
 
@@ -34,7 +34,7 @@ function Customer() {
             dateofbirth: '6/2/01',
         }
         ];
-        const register = cst.map(customer => <SiglCst key = {customer.id} customer = {customer} />)
+        const register = cst.map(customer => <SingleCustomer key = {customer.id} customer = {customer} />)
     return (
         <div><Navigation />
         <div>

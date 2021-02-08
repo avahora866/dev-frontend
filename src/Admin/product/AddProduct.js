@@ -13,7 +13,7 @@ function AddProduct() {
                 <input type="text" id="description" name="description" /> 
                 <label for="price">Price:</label>
                 <input type="text" id="price" name="price" /> 
-                <Link to = "/ProductList">
+                    <Link to = "/ProductList">
                     <input type="submit" value="Add" />
                 </Link>
             </form>

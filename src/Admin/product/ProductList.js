@@ -1,5 +1,5 @@
 import React from 'react'
-import SiglProduct from './SiglProduct'
+import SingleProduct from './SingleProduct'
 import {Link} from 'react-router-dom';
 import Navigation from '../Navigation';
 
@@ -24,12 +24,12 @@ function ProductList() {
             price: 4.56
         }
         ];
-        const prodList = prod.map(product => <SiglProduct key = {product.id} product = {product} />)
+        const prodList = prod.map(product => <SingleProduct key = {product.id} product = {product} />)
     return (
         <div><Navigation />
         <div >
             <div>{prodList}</div>
-            <Link to = '/AddProducts'>
+            <Link to = '/AddProduct'>
                 <p><button>Add Product</button></p>
             </Link>
         </div>

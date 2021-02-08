@@ -33,7 +33,7 @@ function Admins() {
         <div>
             <div>{register}</div>
             <Link to='/AddAdmin'>
-                <button>Add</button>
+                <button>Add Admin</button>
             </Link>
         </div>
         </div>

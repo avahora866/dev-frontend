@@ -20,7 +20,7 @@ function loginPage() {
                     </span>
                     <span>
                         <button>Submit</button>
-                        <Link to='/Type'>
+                        <Link to='/CustomerRegistration'>
                             <button>Register</button>
                         </Link>
                     </span>

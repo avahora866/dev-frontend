@@ -25,7 +25,7 @@ function DropList() {
         <div><Navigation />
         <div>
             <div >{orderList}</div>
-            <p><button>Print Droplist</button></p>
+            <button>Print Droplist</button>
         </div>
         </div>
     )

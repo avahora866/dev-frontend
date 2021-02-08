@@ -6,7 +6,6 @@ function AddAdmin() {
     return (
         <div><Navigation />
             <form>
-                <label for="id">AdminID:</label>
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" /> 
                 <label for="email">Email:</label>
@@ -15,7 +14,7 @@ function AddAdmin() {
                 <input type="text" id="uName" name="uName" />
                 <label for="pass">Password:</label>
                 <input type="text" id="pass" name="pass" />
-                <Link to = '/Admins'>
+                <Link to = '/AdminList'>
                     <input type="submit" value="Edit" />
                 </Link>
             </form>

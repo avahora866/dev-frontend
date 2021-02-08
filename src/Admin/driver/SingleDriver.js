@@ -11,7 +11,7 @@ function SingleDriver({driver}) {
                 Email: {driver.email} &nbsp;
                 Username: {driver.username} &nbsp;
                 Password: {driver.password} &nbsp;
-                <Link to = '/EditDrivers'>
+                <Link to = '/EditDriver'>
                     <p><button>Edit</button></p>
                 </Link>
                 <button>Remove</button>

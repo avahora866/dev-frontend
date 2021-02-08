@@ -33,7 +33,7 @@ function Drivers() {
         <div>
             <div >{register}</div>
             <Link to='/AddDriver'>
-                <button>Add</button>
+                <button>Add Driver</button>
             </Link>
         </div>
         </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import SiglProduct from './SiglProduct'
+import SingleProduct from './SingleProduct'
 import './Products.css'
 import Navigation from '../Navigation';
 
@@ -24,7 +24,7 @@ function Products() {
             price: 4.56
         }
         ];
-        const prodList = prod.map(product => <SiglProduct key = {product.id} product = {product} />)
+        const prodList = prod.map(product => <SingleProduct key = {product.id} product = {product} />)
     return (
         <div><Navigation />
         <div >

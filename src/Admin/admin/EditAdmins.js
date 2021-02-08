@@ -15,7 +15,7 @@ function EditAdmins() {
                 <input type="text" id="uName" name="uName" />
                 <label for="pass">Password:</label>
                 <input type="text" id="pass" name="pass" />
-                <Link to = '/Admins'>
+                <Link to = '/AdminList'>
                     <input type="submit" value="Edit" />
                 </Link>
             </form>

@@ -15,7 +15,7 @@ function EditDrivers() {
                 <input type="text" id="uName" name="uName" />
                 <label for="pass">Password:</label>
                 <input type="text" id="pass" name="pass" />
-                <Link to = '/Drivers'>
+                <Link to = '/DriverList'>
                     <input type="submit" value="Edit" />
                 </Link>
             </form>

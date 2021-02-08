@@ -11,7 +11,7 @@ function SingleAdmin({admin}) {
                 Email: {admin.email} &nbsp;
                 Username: {admin.username} &nbsp;
                 Password: {admin.password} &nbsp;
-                <Link to = '/EditAdmins'>
+                <Link to = '/EditAdmin'>
                     <p><button>Edit</button></p>
                 </Link>
                 <button>Remove</button>

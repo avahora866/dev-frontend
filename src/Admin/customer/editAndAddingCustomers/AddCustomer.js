@@ -1,13 +1,12 @@
 import React from 'react'
-import MyForm from './MyForm'
 import {Link} from 'react-router-dom';
 import Navigation from '../../Navigation';
+import MyForm from './MyForm'
 
-function CustomerEdit() {
+function AddCustomer() {
     return (
         <div><Navigation />
             <form>
-                <label for="id">CustomerID</label>
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" />  
                 <label for="email">Email:</label>
@@ -18,7 +17,7 @@ function CustomerEdit() {
                 <input type="text" id="uName" name="uName" />
                 <label for="pass">Password:</label>
                 <input type="text" id="pass" name="pass" />
-                <Link to = '/Customers'>
+                <Link to = '/CustomerList'>
                     <input type="submit" value="Edit" />
                 </Link>
             </form>
@@ -26,4 +25,4 @@ function CustomerEdit() {
     )
 }
 
-export default CustomerEdit
+export default AddCustomer

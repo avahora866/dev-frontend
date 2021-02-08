@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom';
 
 
-function SiglCst({customer}) {
+function SingleCustomer({customer}) {
     return (
         <div>
             <p>
@@ -22,4 +22,4 @@ function SiglCst({customer}) {
     )
 }
 
-export default SiglCst
+export default SingleCustomer

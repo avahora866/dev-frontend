@@ -6,6 +6,7 @@ function EditProduct() {
     return (
         <div><Navigation />
             <form>
+                <label for="id">Product ID</label>
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" /> 
                 <label for="description">Description:</label>

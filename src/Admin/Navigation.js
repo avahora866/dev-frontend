@@ -9,13 +9,13 @@ function Navigation() {
                 <h3>Milk4U</h3>
             </span>
             <ul>
-                <Link to = '/Customers'>
+                <Link to = '/CustomerList'>
                     <li>Customers</li>
                 </Link>
-                <Link to = '/Admins'>
+                <Link to = '/AdminList'>
                     <li>Admins</li>
                 </Link>
-                <Link to = '/Drivers'>
+                <Link to = '/DriverList'>
                     <li>Drivers</li>
                 </Link>
                 <Link to = '/ProductList'>
