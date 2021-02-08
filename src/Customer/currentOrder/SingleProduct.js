@@ -3,7 +3,7 @@ import './Order.css'
 
 function decrease() {
     let num = parseInt(document.getElementById("numOfProd").textContent);
-    if(num == 0){
+    if(num === 0){
         alert("cannot go under 0");
     }else{
         document.getElementById("numOfProd").textContent = parseInt(document.getElementById("numOfProd").textContent) - 1;
