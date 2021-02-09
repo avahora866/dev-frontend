@@ -1,27 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react';
 import './Trolly.css'
 
-function decrease() {
-    let num = parseInt(document.getElementById("numOfProd").textContent);
-    if(num === 0){
-        alert("cannot go under 0");
-    }else{
-        document.getElementById("numOfProd").textContent = parseInt(document.getElementById("numOfProd").textContent) - 1;
-    }
-}
-
-function increase() {
-    document.getElementById("numOfProd").textContent = parseInt(document.getElementById("numOfProd").textContent) + 1;
-}
-
 function SingleProduct({product}) {
+    const [numOfProd, setNumOfProd] = useState(0);
+
+    function handleDecrement() {
+        if(numOfProd === 0){
+            alert("Product quantity cannot go under 0");
+        }else{
+            setNumOfProd(numOfProd - 1);
+        }
+    }
+
     return (
         <div>
             <p>
             Name: {product.name} &nbsp;
             Description: {product.description} &nbsp;
             Price: {product.price} &nbsp;
-            <div><button onClick={decrease}>- &nbsp;&nbsp;</button>&nbsp;<textbox className="textarea" id="numOfProd">0</textbox>&nbsp;<button onClick={increase}> &nbsp;&nbsp;+</button><br /><button>Update</button></div>   
+            <div><button onClick={handleDecrement}>- &nbsp;&nbsp;</button>
+            &nbsp;<textbox className="textarea">{numOfProd}</textbox>
+            &nbsp;<button onClick={() => setNumOfProd(numOfProd + 1)}> &nbsp;&nbsp;+</button>
+            <br /><button>Update</button></div>   
             </p>
         </div>
     )
