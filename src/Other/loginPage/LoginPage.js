@@ -26,16 +26,34 @@ class LoginPage extends Component {
       handleSubmit(event) {
         console.log(this.state.uName)
         console.log(this.state.passWord)
-        // axios.get('http://localhost:9090/milk4u/verifyLogin')
-        //     .then(response =>  {const persons = response.data; this.setState({admins:  persons }); console.log(response.data)})
-        axios.get('http://localhost:9090/milk4u/verifyLogin').then(response => console.log(response))
+
+        const userName = (this.state.uName)
+        const password = (this.state.passWord)
+
+        axios.post('http://localhost:9090/milk4u/verifyLogin', {},  { params: { userName, password }})
+        .then(response => console.log(response))
+        .catch(error => {console.log(error.response)})
+
         event.preventDefault();
-        
+
+        // axios({
+        //     method: 'post',
+        //     url: 'http://localhost:9090/milk4u/verifyLogin',
+        //     })
+        //     .then(function (response) {
+        //         //handle success
+        //         console.log(response.data);
+        //     })
+        //     .catch(function (error) {
+        //         //handle error
+        //         console.log(error);
+        //     });
+        //     event.preventDefault();
       }
     
     render() {
         return (
-            <body><Navigation />
+            <div><Navigation />
              <form onSubmit={this.handleSubmit}>
                  <section>
                     <span>
@@ -56,43 +74,10 @@ class LoginPage extends Component {
                     </span>
                 </section>
             </form>
-        </body>
+        </div>
         )
     }
 }
 
 
 export default LoginPage
-
-// function loginPage() {
-
-//     function verify() {
-//         console.log("asas")
-//     }
-
-
-//     return (
-//         <body><Navigation />
-//              <form>
-//                  <section>
-//                     <span>
-//                     <label>Username:    
-//                         <input type="text" name="name" />
-//                     </label>
-//                     </span>
-//                     <span>
-//                     <label>Password:     
-//                         <input type="text" name="password" />
-//                     </label>
-//                     </span>
-//                     <span>
-//                     <input type="submit" value="Submit" />
-//                         <Link to='/CustomerRegistration'>
-//                             <button>Register</button>
-//                         </Link>
-//                     </span>
-//                 </section>
-//             </form>
-//         </body>
-//     )
-// }
