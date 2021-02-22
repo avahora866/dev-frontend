@@ -10,11 +10,6 @@ section{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: solid  cadetblue;
-    border-radius: 30%;
-    width: 25%;
-    height: 15vw;
-    margin-top: 2em;
 }
 
 section span {
