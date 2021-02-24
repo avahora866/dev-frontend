@@ -9,7 +9,7 @@ class LoginPage extends Component {
     constructor(props) {
         super(props);
     
-        this.state = {uName: '', passWord: '' };
+        this.state = {uName: '', passWord: ''};
         this.handleUnameChange = this.handleUnameChange.bind(this);
         this.handlePassWordChange = this.handlePassWordChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -24,33 +24,40 @@ class LoginPage extends Component {
       }
     
       handleSubmit(event) {
-        const userName = (this.state.uName)
-        const password = (this.state.passWord)
+        const user = (this.state.uName)
+        const pass = (this.state.passWord)
+        let type = "";
+        let url = '/'
 
-        axios.post('http://localhost:9090/milk4u/verifyLogin', {},  { params: { userName, password }})
-        .then(response => console.log(response))
-        .catch(error => {console.log(error.response)})
-        event.preventDefault();
+        axios.post('http://localhost:9090/milk4u/verifyLogin', {
+            userName: user,
+            password: pass
+          })
+          .then((response) => {
+            console.log(response.data);
+            type = response.data;
 
+            switch (type) {
+              case 'Customer':
+                  url = '/Products'
+                  break;
+              case 'Admin':
+                  url = '/CustomerList'
+                  break;
+              case 'Driver':
+                  url = '/Droplist'
+                  break;
+              default:
+                  break;
+            }
+              this.props.history.push(url);
 
+          }, (error) => {
+            console.log(error);
+          });
+          event.preventDefault();
 
-        // axios({
-        //     method: 'post',
-        //     url: 'http://localhost:9090/milk4u/verifyLogin',
-        //     params: {userName, password}
-        //     })
-        //     .then(function (response) {
-        //         //handle success
-        //         console.log(response);
-        //     })
-        //     .catch(function (error) {
-        //         //handle error
-        //         console.log(error.response);
-        //     });
-        //     event.preventDefault();
-
-
-      }
+        }
     
     render() {
         return (
@@ -66,7 +73,7 @@ class LoginPage extends Component {
                         <input type="text" value={this.state.passWord} onChange={this.handlePassWordChange}  />
                     </span>
                     <span>
-                    <input type="submit" value="Submit" />
+                        <input type="submit" value="Submit" />
                         <Link to='/CustomerRegistration'>
                             <button>Register</button>
                         </Link>
