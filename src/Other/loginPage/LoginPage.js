@@ -35,7 +35,10 @@ class LoginPage extends Component {
           })
           .then((response) => {
             console.log(response.data);
-            type = response.data;
+            let data = response.data.split("-");
+            type = data[0];
+
+            sessionStorage.setItem('id', data[1]);
 
             switch (type) {
               case 'Customer':
@@ -51,7 +54,6 @@ class LoginPage extends Component {
                   break;
             }
               this.props.history.push(url);
-
           }, (error) => {
             console.log(error);
           });
