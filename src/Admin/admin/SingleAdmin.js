@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom';
 
 
 function SingleAdmin({admin}) {
+    const adm = [admin.id, admin.name, admin.email, admin.username, admin.password];
+
     return (
         <div>
             <p>
@@ -11,7 +13,7 @@ function SingleAdmin({admin}) {
                 Email: {admin.email} &nbsp;
                 Username: {admin.username} &nbsp;
                 Password: {admin.password} &nbsp;
-                <Link to = '/EditAdmin'>
+                <Link to={{pathname:"/EditAdmin", data:adm}}>
                     <p><button>Edit</button></p>
                 </Link>
                 <button>Remove</button>

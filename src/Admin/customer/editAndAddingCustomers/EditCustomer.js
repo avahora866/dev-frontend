@@ -1,33 +1,34 @@
-import MyForm from './MyForm'
-import {Link} from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 import Navigation from '../../Navigation';
-import React, { Component } from 'react'
+import React from 'react'
 
-class EditCustomer extends Component {
-    render() {
-        return (
-            <div><Navigation />
-                <form>
-                    <label for="id">CustomerID</label>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" />  
-                    <label for="email">Email:</label>
-                    <input type="text" id="email" name="email" />
-                    <label for="D.O.B">D.O.B:</label>
-                        <MyForm />
-                    <label for="uName">Username:</label>
-                    <input type="text" id="uName" name="uName" />
-                    <label for="pass">Password:</label>
-                    <input type="text" id="pass" name="pass" />
-                    <Link to = '/CustomerList'>
-                        <input type="submit" value="Edit" />
-                    </Link>
-                </form>
-            </div>
-        )
-    }
+
+function EditCustomer() {
+
+    let location = useLocation();
+
+    return (
+        <div><Navigation />
+            <form>
+                <label>Customer ID: {location.data[0]}</label>
+                <label>Name:</label>
+                <input type="text" id="name" name="name" value={location.data[1]}/>  
+                <label >Email:</label>
+                <input type="text" id="email" name="email" value={location.data[2]}/>
+                <label >Postcode:</label>
+                <input type="text" id="email" name="postcode" value={location.data[3]}/>
+                <label >Username:</label>
+                <input type="text" id="uName" name="uName" value={location.data[4]}/>
+                <label >Password:</label>
+                <input type="text" id="pass" name="pass" value={location.data[5]}/>
+                <Link to = '/CustomerList'>
+                    <input type="submit" value="Edit" />
+                </Link>
+            </form>
+        </div>
+    )
 }
 
-
-
 export default EditCustomer
+
+

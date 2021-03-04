@@ -11,6 +11,7 @@ function Drivers() {
             email: 'JG@hotmail.com',
             username: 'Jgreen11',
             password: 'Jgreen22',
+            area: 'LE',
         }, 
         {
             id: 2,
@@ -18,6 +19,7 @@ function Drivers() {
             email: 'SG@hotmail.com',
             username: 'SGreen11',
             password: 'SGreen22',
+            area: 'LF',
         }, 
         {
             id: 3,
@@ -25,6 +27,7 @@ function Drivers() {
             email: 'DB@hotmail.com',
             username: 'DBrown11',
             password: 'DBrown22',
+            area: 'LJ',
         }
         ];
         const register = driverList.map(driver => <SingleDriver key = {driver.id} driver = {driver} />)

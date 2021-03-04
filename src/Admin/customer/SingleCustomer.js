@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom';
 
 
 function SingleCustomer({customer}) {
+        const cst = [customer.id, customer.name, customer.email, customer.postcode, customer.username, customer.password];
+
     return (
         <div>
             <p>
@@ -13,8 +15,8 @@ function SingleCustomer({customer}) {
                 Username: {customer.username} &nbsp;
                 Password: {customer.password} &nbsp;
                 Date of birth: {customer.dateofbirth} &nbsp;
-                <Link to = '/EditCustomer'>
-                    <p><button>Edit</button></p>
+                <Link to={{pathname:"/EditCustomer", data:cst}}>
+                    <button>Edit</button>
                 </Link>
                 <button>Remove</button>
             </p>
