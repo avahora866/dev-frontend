@@ -2,28 +2,22 @@ import './Products.css'
 import React, { useState } from 'react';
 
 function SingleProduct({product}) {
-    const [numOfProd, setNumOfProd] = useState(0);
-
-    function handleDecrement() {
-        if(numOfProd === 0){
-            alert("Product quantity cannot go under 0");
-        }else{
-            setNumOfProd(numOfProd - 1);
-        }
-    }
+    const [quantity, setQuantity] = useState(0);
 
     return (
-        <div>
-            <p>
-                Name: {product.name} &nbsp;
-                Description: {product.description} &nbsp;
-                Price: {product.price} &nbsp;
-                <button onClick={handleDecrement}>-</button>&nbsp;
-                <textbox>{numOfProd}</textbox>&nbsp;
-                <button onClick={() => setNumOfProd(numOfProd + 1)}>+</button>
-                <button>Add To Trolly</button>
-            </p>
-        </div>
+        <section>
+            <span>
+                <h4>{product.name} </h4>
+                <h5>£{product.price} </h5>
+            </span>
+            <span>
+                <p>{product.description}</p>
+                <div>
+                    <input id="qty" type="number" min="0" onChange={event => setQuantity(event.target.value)}></input>
+                    <button>Add to Trolly</button>
+                </div>
+            </span>
+        </section>
     )
 }
 

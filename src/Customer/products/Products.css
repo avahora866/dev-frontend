@@ -1,4 +1,13 @@
-textarea{
-    max-width: 8vh;
-    max-height: 3vh;
+section {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+}
+
+h4, h5, p, button {
+    margin: 0.5em;
+}
+
+#qty {
+    width: 5vh;
 }

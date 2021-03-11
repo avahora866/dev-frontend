@@ -10,7 +10,8 @@ input {
     margin-left: 0.5em;;
 }
 
-button {
-    min-height: 25px;
-    margin-left: 1.5em;;
+#sub, #reg {
+    min-width: 100px;
+    align-self: center;
+    margin-top: 0.2em;
 }

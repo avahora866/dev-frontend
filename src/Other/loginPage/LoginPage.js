@@ -65,20 +65,20 @@ class LoginPage extends Component {
         return (
             <div><Navigation />
              <form onSubmit={this.handleSubmit}>
-                    <span>
-                        <label>Username:</label>    
-                        <input type="text" value={this.state.uName} onChange={this.handleUnameChange}  />        
-                    </span>
-                    <span>
-                        <label>Password:</label>    
-                        <input type="text" value={this.state.passWord} onChange={this.handlePassWordChange}  />
-                    </span>
-                    <span>
-                        <input type="submit" value="Submit" />
-                        <Link to='/CustomerRegistration'>
-                            <button>Register</button>
-                        </Link>
-                    </span>
+                <span>
+                    <label>Username:</label>    
+                    <input type="text" value={this.state.uName} onChange={this.handleUnameChange}  />        
+                </span>
+                <span>
+                    <label>Password:</label>    
+                    <input type="text" value={this.state.passWord} onChange={this.handlePassWordChange}  />
+                </span>
+                <span>
+                <input id="sub" type="submit" value="Submit" />  
+                <Link to='/CustomerRegistration'>
+                    <button id="reg">Register</button>
+                </Link>
+                </span>
             </form>
         </div>
         )
