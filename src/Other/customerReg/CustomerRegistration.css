@@ -4,3 +4,8 @@ form {
     align-items: center;
     justify-content: flex-start;
 }
+
+button{
+    align-self: center;
+    margin: 0.5em;
+}

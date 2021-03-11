@@ -65,13 +65,12 @@ class LoginPage extends Component {
         return (
             <div><Navigation />
              <form onSubmit={this.handleSubmit}>
-                 <section>
                     <span>
-                    <label>Username:</label>    
+                        <label>Username:</label>    
                         <input type="text" value={this.state.uName} onChange={this.handleUnameChange}  />        
                     </span>
                     <span>
-                    <label>Password:</label>    
+                        <label>Password:</label>    
                         <input type="text" value={this.state.passWord} onChange={this.handlePassWordChange}  />
                     </span>
                     <span>
@@ -80,7 +79,6 @@ class LoginPage extends Component {
                             <button>Register</button>
                         </Link>
                     </span>
-                </section>
             </form>
         </div>
         )

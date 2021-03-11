@@ -11,14 +11,14 @@ function customerRegistration() {
     return (
         <div><Navigation />
             <form>
-                <label for="name">Name:</label>
+                <label htmlFor="name">Name:</label>
                 <input type="text" id="name" name="name" />  
-                <label for="email">Email:</label>
+                <label htmlFor="email">Email:</label>
                 <input type="text" id="email" name="email" />
                 <MyForm />
-                <label for="uName">Username:</label>
+                <label htmlFor="uName">Username:</label>
                 <input type="text" id="uName" name="uName" />
-                <label for="pass">Password:</label>
+                <label htmlFor="pass">Password:</label>
                 <input type="text" id="pass" name="pass" />
                     <Link to ='/Products'>
                         <button>Register</button>
