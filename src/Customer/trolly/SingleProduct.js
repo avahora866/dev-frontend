@@ -21,7 +21,8 @@ function SingleProduct({product}) {
             <div><button onClick={handleDecrement}>- &nbsp;&nbsp;</button>
             &nbsp;<textbox className="textarea">{numOfProd}</textbox>
             &nbsp;<button onClick={() => setNumOfProd(numOfProd + 1)}> &nbsp;&nbsp;+</button>
-            <br /><button>Update</button></div>   
+            <br /><button>Update</button></div> 
+            <button>Delete</button>  
             </p>
         </div>
     )
