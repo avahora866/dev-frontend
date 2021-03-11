@@ -1,5 +1,4 @@
 import SingleProduct from './SingleProduct'
-import './Products.css'
 import Navigation from '../Navigation';
 import React, { Component } from 'react'
 
@@ -9,7 +8,7 @@ class Products extends Component {
             {
                 id: 1,
                 name: 'Milk',
-                description: 'To drink',
+                description: 'To drinkasassasasas',
                 price: 5.47
             }, 
             {
@@ -21,7 +20,7 @@ class Products extends Component {
             {
                 id: 3,
                 name: 'Cheese',
-                description: 'I dont know',
+                description: 'I dont knowassasasasdfswgar',
                 price: 4.56
             }
             ];

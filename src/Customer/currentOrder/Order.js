@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import SingleProduct from './SingleProduct'
-import './Order.css'
 import Navigation from '../Navigation';
 
 
@@ -9,21 +8,21 @@ function Order() {
         {
             id: 1,
             name: 'Milk',
-            description: 'To drink',
+            description: 'To drinkdddddddddddddddddddddddddd',
             price: 5.47,
             quaty: 4
         }, 
         {
             id: 2,
             name: 'Eggs',
-            description: 'Can make omelates with',
+            description: 'Can make omelates withdddddddddddddddddddd',
             price: 2.99,
             quaty: 6
         }, 
         {
             id: 3,
             name: 'Cheese',
-            description: 'I dont know',
+            description: 'I dont knowddddddddddddddddddddddddddd',
             price: 4.56,
             quaty: 9
         }
@@ -45,8 +44,8 @@ function Order() {
         <div >
             <div >{prodList}</div>
             <p>
-                <button>Cancel Order</button>
-                <label>{totalPrice}</label>
+                <button className="margin">Cancel Order</button>
+                <label className="margin">{totalPrice}</label>
             </p>
         </div>
         </div>

@@ -1,21 +1,23 @@
-import './Products.css'
 import React, { useState } from 'react';
+import '../../Styles.css'
 
 function SingleProduct({product}) {
     const [quantity, setQuantity] = useState(0);
 
     return (
-        <section>
-            <span>
-                <h4>{product.name} </h4>
-                <h5>£{product.price} </h5>
+        <section className="secBorder">
+            <span className="margin">
+                <h4 className="margin">{product.name} </h4>
+                <h4 className="margin">£{product.price} </h4>
             </span>
-            <span>
-                <p>{product.description}</p>
-                <div>
-                    <input id="qty" type="number" min="0" onChange={event => setQuantity(event.target.value)}></input>
-                    <button>Add to Trolly</button>
-                </div>
+            <span className="margin">
+                <p className="margin">
+                        {product.description}
+                        <span className="margin">
+                        <input id="qty" type="number" min="0" onChange={event => setQuantity(event.target.value)} value={quantity} className="numStyling"></input>
+                        <button>Add to Trolly</button>
+                    </span>
+                </p>
             </span>
         </section>
     )

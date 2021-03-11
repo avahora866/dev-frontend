@@ -1,22 +1,24 @@
 import React, { useState } from 'react';
-import './Trolly.css'
+import '../../Styles.css'
 
 function SingleProduct({product}) {
     const [quantity, setQuantity] = useState(product.quaty);
     return (
-        <section>
-            <span>
-                <h4>{product.name} </h4>
-                <h5>£{product.price} </h5>
+        <section className="secBorder">
+            <span className="margin">
+                <h4 className="margin">{product.name} </h4>
+                <h4 className="margin">£{product.price} </h4>
             </span>
-            <span>
-                <p>{product.description}</p>
-                <div>
-                    <label>Quantity:</label>
-                    <input id="qty" type="number" min="0" value={quantity} onChange={event => setQuantity(event.target.value)}></input>
-                    <button>Update</button>
-                    <button>Remove</button>
-                </div>
+            <span className="margin">
+                <p className="margin">
+                    {product.description}
+                    <span className="margin">
+                        <label className="margin">Quantity:</label>
+                        <input id="qty" type="number" min="0" value={quantity} onChange={event => setQuantity(event.target.value)} className="numStyling"></input>
+                        <button className="margin">Update</button>
+                        <button className="margin">Remove</button>
+                    </span>
+                </p>
             </span>
         </section>
     )

@@ -6,21 +6,28 @@ function SingleCustomer({customer}) {
         const cst = [customer.id, customer.name, customer.email, customer.postcode, customer.username, customer.password];
 
     return (
-        <div>
-            <p>
-                ID: {customer.id} &nbsp;
-                Name: {customer.name} &nbsp;
-                Email: {customer.email} &nbsp;
-                Postcode: {customer.postcode} &nbsp;
-                Username: {customer.username} &nbsp;
-                Password: {customer.password} &nbsp;
-                Date of birth: {customer.dateofbirth} &nbsp;
-                <Link to={{pathname:"/EditCustomer", data:cst}}>
-                    <button>Edit</button>
-                </Link>
-                <button>Remove</button>
-            </p>
-        </div>
+        <section>
+            <span>
+            <label>ID: {customer.id}</label>
+            <label>Name: {customer.name}</label>
+            <label>Email: {customer.email}</label>
+            <label>Postcode: {customer.postcode}</label>
+            </span>
+            <span>
+            <label>Username: {customer.username}</label>
+            <label>Password: {customer.password}</label>
+            <label>Date Of Birth: {customer.dateofbirth}</label>
+            </span>
+            <span>
+            <Link to={{pathname:"/EditCustomer", data:cst}}>
+                 <button>Edit</button>
+            </Link>
+            <button>Remove</button>
+            </span>
+        </section>
+        
+        
+
     )
 }
 

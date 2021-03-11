@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom';
 import Navigation from '../Navigation';
-import './LoginPage.css'
+import '../../Styles.css'
 import React, { Component } from 'react'
 import axios from 'axios';
 
@@ -64,19 +64,19 @@ class LoginPage extends Component {
     render() {
         return (
             <div><Navigation />
-             <form onSubmit={this.handleSubmit}>
-                <span>
-                    <label>Username:</label>    
+             <form onSubmit={this.handleSubmit} className="boxColumn">
+                <span className="margin">
+                    <label className="margin">Username:</label>    
                     <input type="text" value={this.state.uName} onChange={this.handleUnameChange}  />        
                 </span>
-                <span>
-                    <label>Password:</label>    
-                    <input type="text" value={this.state.passWord} onChange={this.handlePassWordChange}  />
+                <span className="margin">
+                    <label className="margin">Password:</label>    
+                    <input type="password" value={this.state.passWord} onChange={this.handlePassWordChange}  />
                 </span>
-                <span>
-                <input id="sub" type="submit" value="Submit" />  
+                <span className="margin">
+                <input id="sub" type="submit" value="Submit" className="margin"/>  
                 <Link to='/CustomerRegistration'>
-                    <button id="reg">Register</button>
+                    <button>Register</button>
                 </Link>
                 </span>
             </form>

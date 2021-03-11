@@ -4,13 +4,10 @@ import {Link} from 'react-router-dom';
 import Navigation from '../Navigation';
 import './CustomerRegistration.css'
 
-export default customerRegistration
-
-
 function customerRegistration() {
     return (
         <div><Navigation />
-            <form>
+            <form className="boxColumn">
                 <label htmlFor="name">Name:</label>
                 <input type="text" id="name" name="name" />  
                 <label htmlFor="email">Email:</label>
@@ -27,3 +24,5 @@ function customerRegistration() {
         </div>
     )
 }
+
+export default customerRegistration
