@@ -23,9 +23,6 @@ function App() {
   return (
     <Router>
     <div className="App">
-      {/* Stopped making the routing path at the admin edit customer stage
-      as im not sure how to go about it - may need to learn more about router input.
-      Same problem for the edit products - could still do add products though*/}
         <Switch>
           <Route path="/" exact component={LoginPage} />
           {/* Customer */}

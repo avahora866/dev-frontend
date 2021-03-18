@@ -14,7 +14,7 @@ function SingleProduct({product}) {
                     {product.description}
                     <span className="margin">
                         <label className="margin">Quantity:</label>
-                        <input id="qty" type="number" min="0" value={quantity} onChange={event => setQuantity(event.target.value)} className="numStyling"></input>
+                        <input id="qty" type="number" min="1" value={quantity} onChange={event => setQuantity(event.target.value)} className="numStyling"></input>
                         <button className="margin">Update</button>
                         <button className="margin">Remove</button>
                     </span>
