@@ -10,6 +10,7 @@ function Navigation() {
                 <h3>Milk4U</h3>
             </span>
             <ul>
+            <li>{sessionStorage.getItem('username')}</li>
                 <Link to = '/Order'>
                     <li>Order</li>
                 </Link>
@@ -22,6 +23,7 @@ function Navigation() {
                 <Link to = '/'>
                     <li>Sign out</li>
                 </Link>
+                
             </ul>
         </nav>
     )

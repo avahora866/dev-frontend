@@ -35,10 +35,20 @@ class LoginPage extends Component {
           })
           .then((response) => {
             console.log(response.data);
-            let data = response.data.split("-");
-            type = data[0];
+            let data = response.data;
+            type = data.type;
 
-            sessionStorage.setItem('id', data[1]);
+            sessionStorage.setItem('UserId', data.userId);
+            sessionStorage.setItem('username', data.username);
+            sessionStorage.setItem('email', data.email);
+            sessionStorage.setItem('fName', data.fName);
+            sessionStorage.setItem('lName', data.lName);
+            sessionStorage.setItem('dateOfBirth', data.dateOfBirth);
+            sessionStorage.setItem('postcode', data.postcode);
+            sessionStorage.setItem('area', data.area);
+            sessionStorage.setItem('type', data.type);
+
+
 
             switch (type) {
               case 'Customer':
