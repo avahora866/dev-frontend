@@ -3,12 +3,12 @@ import {Link} from 'react-router-dom';
 
 
 function SingleAdmin({admin}) {
-    const adm = [admin.id, admin.name, admin.email, admin.username, admin.password];
+    const adm = [admin.userId, admin.name, admin.email, admin.username, admin.password];
 
     return (
         <div>
             <p>
-                ID: {admin.id} &nbsp;
+                ID: {admin.userId} &nbsp;
                 Name: {admin.name} &nbsp;
                 Email: {admin.email} &nbsp;
                 Username: {admin.username} &nbsp;

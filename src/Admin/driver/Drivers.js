@@ -1,47 +1,45 @@
-import React from 'react'
 import SingleDriver from './SingleDriver'
 import Navigation from '../Navigation';
 import {Link} from 'react-router-dom';
+import React, { Component } from 'react'
+import axios from 'axios';
 
-function Drivers() {
-    const driverList = [
-        {
-            id: 1,
-            name: 'Jhon Green',
-            email: 'JG@hotmail.com',
-            username: 'Jgreen11',
-            password: 'Jgreen22',
-            area: 'LE',
-        }, 
-        {
-            id: 2,
-            name: 'Steve Green',
-            email: 'SG@hotmail.com',
-            username: 'SGreen11',
-            password: 'SGreen22',
-            area: 'LF',
-        }, 
-        {
-            id: 3,
-            name: 'David Brown',
-            email: 'DB@hotmail.com',
-            username: 'DBrown11',
-            password: 'DBrown22',
-            area: 'LJ',
+class Driver extends Component {    
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+             driverList : [],
         }
-        ];
-        const register = driverList.map(driver => <SingleDriver key = {driver.id} driver = {driver} />)
-    return (
-        <div><Navigation />
-        <div>
-            <div >{register}</div>
-            <Link to='/AddDriver'>
-                <button>Add Driver</button>
-            </Link>
-        </div>
-        </div>
-    )
+    }
+
+    componentDidMount() {
+        axios.get('http://localhost:9090/milk4u/getUsers', {
+            params: {
+              type: "Driver"
+            }
+          }).then(res => {
+            this.setState({driverList : res.data});
+            console.log(this.state.driverList)
+          });     
+    }
+
+    render() {
+        let register = this.state.driverList.map(driver => <SingleDriver key = {driver.userId} driver = {driver} />)
+        return (
+            <div><Navigation /> 
+                <div>
+                    <div >{register}</div>
+                    <Link to='/AddDriver'>
+                        <button>Add Driver</button>
+                    </Link>
+                </div>
+            </div>
+        )
+    }
 }
 
-export default Drivers
+
+export default Driver
+
 

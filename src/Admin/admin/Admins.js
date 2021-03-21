@@ -1,44 +1,46 @@
-import React from 'react'
 import SingleAdmin from './SingleAdmin'
 import Navigation from '../Navigation';
 import {Link} from 'react-router-dom';
+import React, { Component } from 'react'
+import axios from 'axios';
 
-function Admins() {
-    const adminList = [
-        {
-            id: 1,
-            name: 'Jhon Green',
-            email: 'JG@hotmail.com',
-            username: 'Jgreen11',
-            password: 'Jgreen22',
-        }, 
-        {
-            id: 2,
-            name: 'Steve Green',
-            email: 'SG@hotmail.com',
-            username: 'SGreen11',
-            password: 'SGreen22',
-        }, 
-        {
-            id: 3,
-            name: 'David Brown',
-            email: 'DB@hotmail.com',
-            username: 'DBrown11',
-            password: 'DBrown22',
+class Admin extends Component {    
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+             adminList : [],
         }
-        ];
-        const register = adminList.map(admin => <SingleAdmin key = {admin.id} admin = {admin} />)
-    return (
-        <div><Navigation />
-        <div>
-            <div>{register}</div>
-            <Link to='/AddAdmin'>
-                <button>Add Admin</button>
-            </Link>
-        </div>
-        </div>
-    )
+    }
+
+    componentDidMount() {
+        axios.get('http://localhost:9090/milk4u/getUsers', {
+            params: {
+              type: "Admin"
+            }
+          }).then(res => {
+            this.setState({adminList : res.data});
+            console.log(this.state.adminList)
+          });     
+    }
+
+    render() {
+        let register = this.state.adminList.map(admin => <SingleAdmin key = {admin.userId} admin = {admin} />)
+        return (
+            <div><Navigation /> 
+                <div>
+                    <div >{register}</div>
+                    <Link to='/AddAdmin'>
+                        <button>Add Admin</button>
+                    </Link>
+                </div>
+            </div>
+        )
+    }
 }
 
-export default Admins
+
+export default Admin
+
+
 

@@ -3,12 +3,12 @@ import {Link} from 'react-router-dom';
 
 
 function SingleDriver({driver}) {
-    const driv = [driver.id, driver.name, driver.email, driver.username, driver.password, driver.area];
+    const driv = [driver.userId, driver.name, driver.email, driver.username, driver.password, driver.area];
 
     return (
         <div>
             <p>
-                ID: {driver.id} &nbsp;
+                ID: {driver.userId} &nbsp;
                 Name: {driver.name} &nbsp;
                 Email: {driver.email} &nbsp;
                 Username: {driver.username} &nbsp;

@@ -3,12 +3,12 @@ import {Link} from 'react-router-dom';
 
 
 function SingleProduct({product}) {
-    const prod = [product.id, product.name, product.description, product.price];
+    const prod = [product.productId, product.name, product.description, product.price];
 
     return (
         <div>
             <p>
-                ID: {product.id} &nbsp;
+                ID: {product.productId} &nbsp;
                 Name: {product.name} &nbsp;
                 Description: {product.description} &nbsp;
                 Price: {product.price} &nbsp;
