@@ -16,7 +16,7 @@ function SingleCustomer({customer}) {
             <span>
             <label>Username: {customer.username}</label>
             <label>Password: {customer.password}</label>
-            <label>Date Of Birth: {customer.dateofbirth}</label>
+            <label>Date Of Birth: {customer.dateOfBirth}</label>
             </span>
             <span>
             <Link to={{pathname:"/EditCustomer", data:cst}}>
