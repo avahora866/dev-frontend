@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react'
 import {Link} from 'react-router-dom';
 import '../../Styles.css'
@@ -5,7 +6,11 @@ import '../../Styles.css'
 
 function SingleAdmin({admin}) {
     const adm = [admin.userId, admin.fName, admin.lName, admin.email, admin.username, admin.password];
-
+    function removeAdmin() {
+        axios.delete('http://localhost:9090/milk4u/delUser', {
+            userIdentification: admin.userId
+        })
+    }
     return (
         <section className="boxColumnSingle">
                 <label className="paddingBottom">ID: {admin.userId} </label>
@@ -18,7 +23,7 @@ function SingleAdmin({admin}) {
                     <Link to={{pathname:"/EditAdmin", data:adm}}>
                         <button className="margin">Edit</button>
                     </Link>
-                    <button className="btnSingle">Remove</button>
+                    <button onClick={removeAdmin} className="btnSingle">Remove</button>
                 </span>
         </section>
     )
