@@ -20,7 +20,6 @@ class Admin extends Component {
             }
           }).then(res => {
             this.setState({adminList : res.data});
-            console.log(this.state.adminList)
           });     
     }
 
