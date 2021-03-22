@@ -5,15 +5,17 @@ import Navigation from '../Navigation';
 function AddDriver() {
     return (
         <div><Navigation />
-            <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" /> 
+            <form className="boxColumnSingle">
+                <label for="name">First Name:</label>
+                <input className="paddingBottom" type="text" id="fName" name="fName" /> 
+                <label for="name">Last Name:</label>
+                <input className="paddingBottom" type="text" id="lName" name="lName" /> 
                 <label for="email">Email:</label>
-                <input type="text" id="email" name="email" />
+                <input className="paddingBottom" type="text" id="email" name="email" />
                 <label for="uName">Username:</label>
-                <input type="text" id="uName" name="uName" />
+                <input className="paddingBottom" type="text" id="uName" name="uName" />
                 <label for="pass">Password:</label>
-                <input type="text" id="pass" name="pass" />
+                <input className="paddingBottom" type="text" id="pass" name="pass" />
                 <Link to = '/DriverList'>
                     <input type="submit" value="Edit" />
                 </Link>

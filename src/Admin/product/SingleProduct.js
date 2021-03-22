@@ -6,20 +6,18 @@ function SingleProduct({product}) {
     const prod = [product.productId, product.name, product.description, product.price];
 
     return (
-        <div>
-            <p>
-                ID: {product.productId} &nbsp;
-                Name: {product.name} &nbsp;
-                Description: {product.description} &nbsp;
-                Price: {product.price} &nbsp;
+        <section className="boxColumnSingle">
+            <label className="paddingBottom">ID: {product.productId}</label>
+            <label className="paddingBottom">Name: {product.name}</label>
+            <label className="paddingBottom">Description: {product.description}</label>
+            <label className="paddingBottom">Price: {product.price}</label>
+            <span>
                 <Link to={{pathname:"/EditProduct", data:prod}}>
-                    <p><button>Edit</button></p>
+                    <button className="margin">Edit</button>
                 </Link>
-                <Link to = "/ProductList">
-                <p><button>Remove</button></p>
-                </Link>
-            </p>
-        </div>
+                <button className="btnSingle">Remove</button>
+            </span>
+        </section>
     )
 }
 

@@ -1,25 +1,26 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
+import '../../Styles.css'
 
 
 function SingleAdmin({admin}) {
     const adm = [admin.userId, admin.fName, admin.lName, admin.email, admin.username, admin.password];
 
     return (
-        <div>
-            <p>
-                ID: {admin.userId} &nbsp;
-                First Name: {admin.fName}&nbsp;
-                Last Name: {admin.lName} &nbsp;
-                Email: {admin.email} &nbsp;
-                Username: {admin.username} &nbsp;
-                Password: {admin.password} &nbsp;
-                <Link to={{pathname:"/EditAdmin", data:adm}}>
-                    <p><button>Edit</button></p>
-                </Link>
-                <button>Remove</button>
-            </p>
-        </div>
+        <section className="boxColumnSingle">
+                <label className="paddingBottom">ID: {admin.userId} </label>
+                <label className="paddingBottom">First Name: {admin.fName} </label>
+                <label className="paddingBottom">Last Name: {admin.lName} </label>
+                <label className="paddingBottom">Email: {admin.email} </label>
+                <label className="paddingBottom">Username: {admin.username} </label> 
+                <label className="paddingBottom">Password: {admin.password} </label> 
+                <span>
+                    <Link to={{pathname:"/EditAdmin", data:adm}}>
+                        <button className="margin">Edit</button>
+                    </Link>
+                    <button className="btnSingle">Remove</button>
+                </span>
+        </section>
     )
 }
 

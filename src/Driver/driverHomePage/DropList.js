@@ -22,13 +22,11 @@ function DropList() {
         ];
         const orderList = orders.map(order => <Orders key = {order.id} order = {order} />)
         
-        let user = sessionStorage.getItem('id');
     return (
         <div><Navigation />
         <div>
             <div >{orderList}</div>
             <button>Print Droplist</button>
-            <h6>{user}</h6>
         </div>
         </div>
     )

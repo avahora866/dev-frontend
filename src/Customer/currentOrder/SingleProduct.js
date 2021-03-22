@@ -12,7 +12,7 @@ function SingleProduct({product}) {
             <h4 className="margin">£{product.price}</h4>
         </span>
         <span className="margin">
-            <p>
+            <p className="margin">
                 {product.description}
                 <span className="margin">
                 <label className="margin">Quantity:</label>

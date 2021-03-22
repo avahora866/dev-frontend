@@ -21,3 +21,19 @@
     max-width: 5vh;
     margin: 0 1em 0 0;
 }
+
+/* SingleUser */
+.boxColumnSingle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.paddingBottom {
+    padding-bottom: 0.2em;
+}
+
+.btnSingle {
+    max-height: 2em;
+}

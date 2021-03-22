@@ -2,37 +2,28 @@ import React from 'react'
 import {Link} from 'react-router-dom';
 import Navigation from '../../Navigation';
 import MyForm from './MyForm'
+import '../../../Styles.css'
 
 
 function AddCustomer() {
     return (
         <div><Navigation />
-            <form>
-                <span>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" />
-                </span>
-                <span>
-                    <label for="email">Email:</label>
-                    <input type="text" id="email" name="email" />
-                </span>
-                <span>
-                    <label for="D.O.B">D.O.B:</label>
-                        <MyForm />
-                </span>
-                <span>
-                    <label for="uName">Username:</label>
-                    <input type="text" id="uName" name="uName" />
-                </span>
-                <span>
-                    <label for="pass">Password:</label>
-                    <input type="text" id="pass" name="pass" />
-                </span>
-                <span>
-                    <Link to = '/CustomerList'>
-                        <input type="submit" value="Edit" />
-                    </Link>
-                </span>
+            <form className="boxColumnSingle">
+                <label for="name">First Name:</label>
+                <input className="paddingBottom" type="text" id="fName" name="fName" />
+                <label for="name">Last Name:</label>
+                <input className="paddingBottom" type="text" id="lName" name="lName" />
+                <label for="email">Email:</label>
+                <input className="paddingBottom" type="text" id="email" name="email" />
+                <label for="D.O.B">D.O.B:</label>
+                    <MyForm />
+                <label for="uName">Username:</label>
+                <input className="paddingBottom" type="text" id="uName" name="uName" />
+                <label for="pass">Password:</label>
+                <input className="paddingBottom" type="text" id="pass" name="pass" />
+                <Link to = '/CustomerList'>
+                    <input type="submit" value="Edit" />
+                </Link>
             </form>
         </div>
     )

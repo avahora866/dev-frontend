@@ -1,29 +1,27 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
+import '../../Styles.css'
 
 
 function SingleCustomer({customer}) {
-        const cst = [customer.userId, customer.name, customer.email, customer.postcode, customer.username, customer.password];
+        const cst = [customer.userId, customer.fName, customer.lName, customer.email, customer.postcode, customer.username, customer.password];
 
     return (
-        <section>
-            <span>
-            <label>ID: {customer.userId}</label>
-            <label>Name: {customer.name}</label>
-            <label>Email: {customer.email}</label>
-            <label>Postcode: {customer.postcode}</label>
-            </span>
-            <span>
-            <label>Username: {customer.username}</label>
-            <label>Password: {customer.password}</label>
-            <label>Date Of Birth: {customer.dateOfBirth}</label>
-            </span>
-            <span>
-            <Link to={{pathname:"/EditCustomer", data:cst}}>
-                 <button>Edit</button>
-            </Link>
-            <button>Remove</button>
-            </span>
+        <section className="boxColumnSingle">
+                <label className="paddingBottom">ID: {customer.userId}</label>
+                <label className="paddingBottom">First Name: {customer.fName}</label>
+                <label className="paddingBottom">Last Name: {customer.lName}</label>
+                <label className="paddingBottom">Email: {customer.email}</label>
+                <label className="paddingBottom">Postcode: {customer.postcode}</label>
+                <label className="paddingBottom">Username: {customer.username}</label>
+                <label className="paddingBottom">Password: {customer.password}</label>
+                <label className="paddingBottom">Date Of Birth: {customer.dateOfBirth}</label>
+                <span>
+                    <Link to={{pathname:"/EditCustomer", data:cst}}>
+                        <button className="margin">Edit</button>
+                    </Link>
+                    <button className="btnSingle">Remove</button>
+                </span>
         </section>
         
         
