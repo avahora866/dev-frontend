@@ -9,26 +9,21 @@ class Order extends Component {
     
         this.state = {
             list : [],
-            totalPrice : 0,
+            totalPrice : 0.00,
         }
-        // this.calTotalPrice = this.calTotalPrice.bind(this);
+        this.calTotalPrice = this.calTotalPrice.bind(this);
         this.componentDidMount = this.componentDidMount.bind(this);
     }
 
-    // calTotalPrice() {
-    //     let result = 0.00;
-    //     for (let index = 0; index < this.state.list.length; index++) {
-    //         result += this.state.list[index].price * this.state.list[index].quaty;
-    //     }
-    //     this.setState({totalPrice: result})
-    // }
-
-    splitLists() {
-        let temp = [];
-        for(let index = 0; index < this.state.length/2; index++){
-            
+    calTotalPrice() {
+        let result = 0.00;
+        for (let index = 0; index < this.state.list.length; index++) {
+            const temp = this.state.list[index]
+            result += temp[3] * temp[4];
         }
+        this.setState({totalPrice: result})
     }
+
 
     componentDidMount() {
         axios.get('http://localhost:9090/milk4u/getCurrentOrder', {
@@ -37,13 +32,12 @@ class Order extends Component {
             }
         }).then(res => {
             this.setState({list : res.data});
-          });    
-          
-        //   this.calTotalPrice();
+            this.calTotalPrice()
+          });     
     }
-    
+
     render() {
-        const prodList = this.state.list.map(product => <SingleProduct key = {product.id} product = {product} />)
+        const prodList = this.state.list.map(product => <SingleProduct key = {product[0]} product = {product} />)
 
         return (
             <div><Navigation />
@@ -51,7 +45,7 @@ class Order extends Component {
                     <div >{prodList}</div>
                     <p>
                         <button className="margin">Cancel Order</button>
-                        <label className="margin">{this.state.totalPrice}</label>
+                        <label className="margin">Total: £{this.state.totalPrice}</label>
                     </p>
                 </div>
             </div>
