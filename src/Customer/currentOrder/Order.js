@@ -19,7 +19,7 @@ class Order extends Component {
         let result = 0.00;
         for (let index = 0; index < this.state.list.length; index++) {
             const temp = this.state.list[index]
-            result += temp[3] * temp[4];
+            result += temp.price * temp.quantity;
         }
         this.setState({totalPrice: result})
     }
@@ -37,7 +37,7 @@ class Order extends Component {
     }
 
     render() {
-        const prodList = this.state.list.map(product => <SingleProduct key = {product[0]} product = {product} />)
+        const prodList = this.state.list.map(product => <SingleProduct key = {product.productId} product = {product} />)
 
         return (
             <div><Navigation />
