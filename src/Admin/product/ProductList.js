@@ -16,7 +16,6 @@ class ProductList extends Component {
     componentDidMount() {
         axios.get('http://localhost:9090/milk4u/getProducts').then(res => {
             this.setState({productList : res.data});
-            console.log(this.state.productList)
           });     
     }
 
@@ -25,6 +24,7 @@ class ProductList extends Component {
         return (
             <div><Navigation /> 
                 <div>
+                <h2>Product List</h2>
                     <div >{register}</div>
                     <Link to='/AddProduct'>
                         <button>Add Product</button>

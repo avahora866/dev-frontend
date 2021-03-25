@@ -20,7 +20,6 @@ class Driver extends Component {
             }
           }).then(res => {
             this.setState({driverList : res.data});
-            console.log(this.state.driverList)
           });     
     }
 
@@ -29,6 +28,7 @@ class Driver extends Component {
         return (
             <div><Navigation /> 
                 <div>
+                <h2>Driver List</h2>
                     <div >{register}</div>
                     <Link to='/AddDriver'>
                         <button>Add Driver</button>

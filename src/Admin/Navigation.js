@@ -2,6 +2,19 @@ import React from 'react'
 import {Link} from 'react-router-dom';
 
 function Navigation() {
+
+    function sessionClearAll() {
+        sessionStorage.removeItem('UserId')
+        sessionStorage.removeItem('username')
+        sessionStorage.removeItem('email')
+        sessionStorage.removeItem('fName')
+        sessionStorage.removeItem('lName')
+        sessionStorage.removeItem('dateOfBirth')
+        sessionStorage.removeItem('postcode')
+        sessionStorage.removeItem('area')
+        sessionStorage.removeItem('type')
+    }
+
     return (
         <nav>
             <span>
@@ -23,7 +36,7 @@ function Navigation() {
                     <li>Products</li>
                 </Link>
                 <Link to = '/'>
-                    <li>Sign out</li>
+                    <li onClick={sessionClearAll}>Sign out</li>
                 </Link>
             </ul>
         </nav>

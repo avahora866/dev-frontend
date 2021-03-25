@@ -20,7 +20,6 @@ class Customer extends Component {
             }
           }).then(res => {
             this.setState({customerList : res.data});
-            console.log(this.state.customerList)
           });     
     }
 
@@ -29,6 +28,7 @@ class Customer extends Component {
         return (
             <div><Navigation /> 
                 <div>
+                <h2>Customer List</h2>
                     <div >{register}</div>
                     <Link to='/AddCustomer'>
                         <button>Add Customer</button>

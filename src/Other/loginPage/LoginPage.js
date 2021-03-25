@@ -34,7 +34,6 @@ class LoginPage extends Component {
             password: pass
           })
           .then((response) => {
-            console.log(response.data);
             let data = response.data;
             type = data.type;
 
@@ -47,6 +46,7 @@ class LoginPage extends Component {
             sessionStorage.setItem('postcode', data.postcode);
             sessionStorage.setItem('area', data.area);
             sessionStorage.setItem('type', data.type);
+
 
 
 
