@@ -1,10 +1,20 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
+import axios from 'axios';
 
 
 function SingleProduct({product}) {
     const prod = [product.productId, product.name, product.description, product.price];
 
+    function removeProduct() {
+        axios.delete('http://localhost:9090/milk4u/delProduct', {
+            params: {
+                pId: product.productId
+            }
+        })
+
+        window.location.reload()
+    }
     return (
         <section className="boxColumnSingle">
             <label className="paddingBottom">ID: {product.productId}</label>
@@ -15,7 +25,7 @@ function SingleProduct({product}) {
                 <Link to={{pathname:"/EditProduct", data:prod}}>
                     <button className="margin">Edit</button>
                 </Link>
-                <button className="btnSingle">Remove</button>
+                <button onClick={removeProduct} className="btnSingle">Remove</button>
             </span>
         </section>
     )
