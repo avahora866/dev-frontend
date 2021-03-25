@@ -1,11 +1,21 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
 import '../../Styles.css'
+import axios from 'axios';
+
 
 
 function SingleCustomer({customer}) {
-        const cst = [customer.userId, customer.fName, customer.lName, customer.email, customer.postcode, customer.username, customer.password];
-
+        const cst = [customer.userId, customer.username, customer.password,  customer.email, customer.fName, customer.lName, customer.postcode];
+        function removeCustomer() {
+            axios.delete('http://localhost:9090/milk4u/delUser', {
+                params: {
+                    id: customer.userId
+                }
+            })
+    
+            window.location.reload()
+        }
     return (
         <section className="boxColumnSingle">
                 <label className="paddingBottom">ID: {customer.userId}</label>
@@ -20,7 +30,7 @@ function SingleCustomer({customer}) {
                     <Link to={{pathname:"/EditCustomer", data:cst}}>
                         <button className="margin">Edit</button>
                     </Link>
-                    <button className="btnSingle">Remove</button>
+                    <button onClick={removeCustomer} className="btnSingle">Remove</button>
                 </span>
         </section>
         
