@@ -1,16 +1,17 @@
 import SingleAdmin from './SingleAdmin'
 import Navigation from '../Navigation';
-import {Link} from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 import React, { Component } from 'react'
 import axios from 'axios';
 
 class Admin extends Component {    
     constructor(props) {
         super(props)
-    
         this.state = {
              adminList : [],
         }
+
+
     }
 
     componentDidMount() {
@@ -20,7 +21,8 @@ class Admin extends Component {
             }
           }).then(res => {
             this.setState({adminList : res.data});
-          });     
+          });    
+
     }
 
     render() {
@@ -28,6 +30,7 @@ class Admin extends Component {
         return (
             <div><Navigation /> 
                 <div>
+                    <h2>Admin List</h2>
                     <div >{register}</div>
                     <Link to='/AddAdmin'>
                         <button>Add Admin</button>

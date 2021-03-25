@@ -31,19 +31,23 @@ function AddAdmin() {
         setPassword(event.target.value)
       }
 
-    function handleSubmit(event) {
-        axios.post('http://localhost:9090/milk4u/addUser', {
-            userName: userName,
-            password: password,
-            email: email,
-            fName: fName,
-            lName: lName,
-            type: "Admin"
-        }).then(this.props.history.goBack())
+      function handleSubmit(event) {
+
+      const data = {
+        userName: userName,
+        password: password,
+        email: email,
+        fName:  fName,
+        lName: lName,
+        type: "Admin"
+      }
+        axios.post('http://localhost:9090/milk4u/addUser', data);
     }
+
+
     return (
         <div><Navigation />
-            <form onSubmit={handleSubmit}className="boxColumnSingle">
+            <form className="boxColumnSingle">
                 <label>First Name:</label>
                 <input className="paddingBottom" type="text" id="fName" name="fName" value={fName} onChange={handlefNameChange}/> 
                 <label>Last Name:</label>
@@ -54,7 +58,10 @@ function AddAdmin() {
                 <input className="paddingBottom" type="text" id="uName" name="uName" value={userName} onChange={handleUserNameChange}/>
                 <label>Password:</label>
                 <input className="paddingBottom" type="text" id="pass" name="pass" value={password} onChange={handlePassChange}/>
+                <Link to="/AdminList" onClick={handleSubmit}>
                     <input type="submit" value="Add Admin" />
+                </Link>
+                    
             </form>
         </div>
     )

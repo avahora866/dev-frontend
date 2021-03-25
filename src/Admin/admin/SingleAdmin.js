@@ -8,8 +8,12 @@ function SingleAdmin({admin}) {
     const adm = [admin.userId, admin.fName, admin.lName, admin.email, admin.username, admin.password];
     function removeAdmin() {
         axios.delete('http://localhost:9090/milk4u/delUser', {
-            userIdentification: admin.userId
+            params: {
+                id: admin.userId
+            }
         })
+
+        window.location.reload()
     }
     return (
         <section className="boxColumnSingle">

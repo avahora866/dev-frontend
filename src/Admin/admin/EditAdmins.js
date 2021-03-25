@@ -35,23 +35,22 @@ function EditAdmins() {
 
 
 
-    function handleSubmit(event) {        
-        axios.put('http://localhost:9090/milk4u/editUsers', {
-                id: {adminId},
-                userName: [userName],
-                password: {password},
-                email: {email},
-                fName: {fName},
-                lName: {lName},
-                postCode: null,
-                area: null
-          }).then(res => console.log(res))
-          event.preventDefault();
-
+    function handleSubmit(event) {   
+      const data = {
+        id: adminId,
+        userName: userName,
+        password: password,
+        email: email,
+        fName: fName,
+        lName: lName,
+        postCode: null,
+        area: null
+      }     
+        axios.put('http://localhost:9090/milk4u/editUsers', data)
     }
     return (
         <div><Navigation />
-            <form className="boxColumn" onSubmit={handleSubmit}>
+            <form className="boxColumn">
                 <label className="paddingBottom">Admin Id: {adminId}</label>
                 <label>First Name: </label>
                 <input  className="paddingBottom" type="text" name="name" value={fName} onChange={handlefNameChange} /> 
@@ -63,7 +62,9 @@ function EditAdmins() {
                 <input  className="paddingBottom" type="text" name="uName" value={userName} onChange={handleUserNameChange} />
                 <label >Password:</label>
                 <input  className="paddingBottom" type="text" name="pass" value={password} onChange={handlePassChange} />
+                <Link to="/AdminList" onClick={handleSubmit}> 
                     <input type="submit" value="Edit"/>
+                </Link>
             </form>
         </div>
     )
