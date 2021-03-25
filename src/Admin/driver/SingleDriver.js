@@ -1,10 +1,20 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
+import axios from 'axios';
+
 
 
 function SingleDriver({driver}) {
-    const driv = [driver.userId, driver.fName, driver.fName, driver.email, driver.username, driver.password, driver.area];
+    const driv = [driver.userId, driver.username, driver.password, driver.email, driver.fName, driver.lName, driver.area];
+    function removeDriver() {
+        axios.delete('http://localhost:9090/milk4u/delUser', {
+            params: {
+                id: driver.userId
+            }
+        })
 
+        window.location.reload()
+    }
     return (
         <section className="boxColumnSingle">
             <label className="paddingBottom">ID: {driver.userId}</label>
@@ -18,7 +28,7 @@ function SingleDriver({driver}) {
                 <Link to={{pathname:"/EditDriver", data:driv}}>
                    <button className="margin">Edit</button>
                 </Link>
-                <button className="btnSingle">Remove</button>
+                <button onClick={removeDriver} className="btnSingle">Remove</button>
             </span>
         </section>
     )

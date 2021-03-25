@@ -1,28 +1,75 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Link, useLocation} from 'react-router-dom';
 import Navigation from '../Navigation';
+import axios from 'axios';
+
 
 function EditDrivers() {
+    const location = useLocation()
+    const [driverId] = useState(location.data[0])
+    const [userName, setuserName] = useState(location.data[1])
+    const [password, setPassword] = useState(location.data[2])
+    const [email, setEmail] = useState(location.data[3])
+    const [fName, setfName] = useState(location.data[4])
+    const [lName, setlName] = useState(location.data[5])
+    const [area, setArea] = useState(location.data[6])
 
-    let location = useLocation();
+
+    function handleUserNameChange(event) {
+        setuserName(event.target.value)
+      }
+
+      function handlePassChange(event) {
+        setPassword(event.target.value)
+      }
+
+      function handleEmailChange(event) {
+        setEmail(event.target.value)
+      }
+
+    function handlefNameChange(event) {
+        setfName(event.target.value)
+      }
+
+      function handlelNameChange(event) {
+        setlName(event.target.value)
+      }
+
+      function handleAreaChange(event) {
+        setArea(event.target.value)
+      }
+
+      function handleSubmit(event) {   
+        const data = {
+          id: driverId,
+          userName: userName,
+          password: password,
+          email: email,
+          fName: fName,
+          lName: lName,
+          postCode: null,
+          area: area
+        }     
+          axios.put('http://localhost:9090/milk4u/editUsers', data)
+      }
 
     return (
         <div><Navigation />
             <form className="boxColumn">
-                <label className="paddingBottom" >Driver Id:{location.data[0]}</label>
-                <label>First Name:</label>
-                <input className="paddingBottom" type="text" id="fNname" name="name" value={location.data[1]}/> 
-                <label>Last Name:</label>
-                <input className="paddingBottom" type="text" id="lName" name="name" value={location.data[2]}/> 
-                <label>Email:</label>
-                <input className="paddingBottom" type="text" id="email" name="email" value={location.data[3]}/>
+                <label className="paddingBottom" >Driver Id:{driverId}</label>
                 <label>Username:</label>
-                <input className="paddingBottom" type="text" id="uName" name="uName" value={location.data[4]}/>
+                <input className="paddingBottom" type="text" id="uName" name="uName" value={userName} onChange={handleUserNameChange}/>
                 <label>Password:</label>
-                <input className="paddingBottom" type="text" id="pass" name="pass" value={location.data[5]}/>
+                <input className="paddingBottom" type="text" id="pass" name="pass" value={password} onChange={handlePassChange}/>
+                <label>Email:</label>
+                <input className="paddingBottom" type="text" id="email" name="email" value={email} onChange={handleEmailChange}/>
+                <label>First Name:</label>
+                <input className="paddingBottom" type="text" id="fNname" name="name" value={fName} onChange={handlefNameChange}/> 
+                <label>Last Name:</label>
+                <input className="paddingBottom" type="text" id="lName" name="name" value={lName} onChange={handlelNameChange}/>       
                 <label>Area:</label>
-                <input className="paddingBottom" type="text" id="area" name="area" value={location.data[6]}/>
-                <Link to = '/DriverList'>
+                <input className="paddingBottom" type="text" id="area" name="area" value={area} onChange={handleAreaChange}/>
+                <Link to = '/DriverList' onClick={handleSubmit}>
                     <input type="submit" value="Edit" />
                 </Link>
             </form>
