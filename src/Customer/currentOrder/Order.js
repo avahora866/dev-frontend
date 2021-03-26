@@ -13,6 +13,8 @@ class Order extends Component {
         }
         this.calTotalPrice = this.calTotalPrice.bind(this);
         this.componentDidMount = this.componentDidMount.bind(this);
+        this.cancelOrder = this.cancelOrder.bind(this);
+
     }
 
     calTotalPrice() {
@@ -22,6 +24,14 @@ class Order extends Component {
             result += temp.price * temp.quantity;
         }
         this.setState({totalPrice: result})
+    }
+
+    cancelOrder() {
+        axios.delete('http://localhost:9090/milk4u/delOrder', {
+            params: {
+                id: sessionStorage.getItem('UserId')
+            }
+        }).then(window.location.reload())
     }
 
 
@@ -44,7 +54,7 @@ class Order extends Component {
                 <div >
                     <div >{prodList}</div>
                     <p>
-                        <button className="margin">Cancel Order</button>
+                        <button className="margin" onClick={this.cancelOrder}>Cancel Order</button>
                         <label className="margin">Total: £{this.state.totalPrice}</label>
                     </p>
                 </div>

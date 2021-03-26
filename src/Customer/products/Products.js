@@ -20,7 +20,7 @@ class Products extends Component {
     }
 
     render() {
-            const prodList = this.state.productList.map(product => <SingleProduct key = {product.id} product = {product} />)
+            const prodList = this.state.productList.map(product => <SingleProduct key = {product.productId} product = {product} />)
         return (
             <div><Navigation />
              <div>

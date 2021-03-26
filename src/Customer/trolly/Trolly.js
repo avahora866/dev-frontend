@@ -14,6 +14,11 @@ class Trolly extends Component {
         }
         this.calTotalPrice = this.calTotalPrice.bind(this);
         this.componentDidMount = this.componentDidMount.bind(this);
+        this.cancelTrolly = this.cancelTrolly.bind(this);
+        this.createOrder = this.createOrder.bind(this);
+        this.addToOrder = this.addToOrder.bind(this);
+
+
     }
 
     calTotalPrice() {
@@ -35,6 +40,26 @@ class Trolly extends Component {
             this.calTotalPrice()
           });     
     }
+
+    cancelTrolly() {
+        axios.delete('http://localhost:9090/milk4u/delTrolly', {
+            params: {
+                id: sessionStorage.getItem('UserId')
+            }
+        }).then(window.location.reload())
+    }
+
+    createOrder() {
+        axios.put('http://localhost:9090/milk4u/createOrder', {
+            userIdentification: sessionStorage.getItem('UserId')
+        }).then(window.location.reload())
+    }
+
+    addToOrder(){
+        axios.put('http://localhost:9090/milk4u/addToOrder', {
+            userIdentification: sessionStorage.getItem('UserId')
+        }).then(window.location.reload())
+    }
     
     render() {
         const prodList = this.state.list.map(product => <SingleProduct key = {product.productId} product = {product} />)
@@ -44,9 +69,9 @@ class Trolly extends Component {
             <div >
                 <div>{prodList}</div>
                     <p>
-                        <button className="margin">Cancel</button>
-                        <button className="margin">Create order</button>
-                        <button className="margin">Add to order</button>
+                        <button className="margin" onClick={this.cancelTrolly}>Cancel</button>
+                        <button className="margin" onClick={this.createOrder}>Create order</button>
+                        <button className="margin" onClick={this.addToOrder}>Add to order</button>
                         <label className="margin">{this.state.totalPrice}</label>
                     </p>
                 </div>
