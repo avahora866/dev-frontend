@@ -29,46 +29,47 @@ class LoginPage extends Component {
         let type = "";
         let url = '/'
 
-        axios.post('http://localhost:9090/milk4u/verifyLogin', {
-            userName: user,
-            password: pass
-          })
-          .then((response) => {
-            let data = response.data;
-            type = data.type;
-
-            sessionStorage.setItem('UserId', data.userId);
-            sessionStorage.setItem('username', data.username);
-            sessionStorage.setItem('email', data.email);
-            sessionStorage.setItem('fName', data.fName);
-            sessionStorage.setItem('lName', data.lName);
-            sessionStorage.setItem('dateOfBirth', data.dateOfBirth);
-            sessionStorage.setItem('postcode', data.postcode);
-            sessionStorage.setItem('area', data.area);
-            sessionStorage.setItem('type', data.type);
-
-
-
-
-            switch (type) {
-              case 'Customer':
-                  url = '/Products'
-                  break;
-              case 'Admin':
-                  url = '/CustomerList'
-                  break;
-              case 'Driver':
-                  url = '/Droplist'
-                  break;
-              default:
-                  break;
-            }
-              this.props.history.push(url);
-          }, (error) => {
-            console.log(error);
-          });
-          event.preventDefault();
-
+        if(user.length === 0 || pass.length === 0){
+            alert("None of the fields may be left blank")
+        }else{
+            axios.post('http://localhost:9090/milk4u/verifyLogin', {
+                userName: user,
+                password: pass
+              })
+              .then((response) => {
+                let data = response.data;
+                type = data.type;
+    
+                sessionStorage.setItem('UserId', data.userId);
+                sessionStorage.setItem('username', data.username);
+                sessionStorage.setItem('email', data.email);
+                sessionStorage.setItem('fName', data.fName);
+                sessionStorage.setItem('lName', data.lName);
+                sessionStorage.setItem('dateOfBirth', data.dateOfBirth);
+                sessionStorage.setItem('postcode', data.postcode);
+                sessionStorage.setItem('area', data.area);
+                sessionStorage.setItem('type', data.type);
+    
+                switch (type) {
+                  case 'Customer':
+                      url = '/Products'
+                      break;
+                  case 'Admin':
+                      url = '/CustomerList'
+                      break;
+                  case 'Driver':
+                      url = '/Droplist'
+                      break;
+                  default:
+                      break;
+                }
+                  this.props.history.push(url);
+              }, (error) => {
+                  console.log(error)
+                alert("Login Failed")
+              });
+              event.preventDefault();
+        }
         }
     
     render() {
