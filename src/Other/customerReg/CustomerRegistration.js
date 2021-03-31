@@ -58,24 +58,32 @@ class CustomerRegistration extends Component {
       }
 
       handleSubmit(event) {
-        const data = {
-          userName: (this.state.userName),
-          password: (this.state.password),
-          email: (this.state.email),
-          fName:  (this.state.fName),
-          lName: (this.state.lName),
-          dateOfBirth: (this.state.selectedDay),
-          postcode: (this.state.postcode),
-          area: null,
-          type: "Customer"
-        }
-          axios.post('http://localhost:9090/milk4u/addUser', data);
+        if(this.state.userName.length === 0  || this.state.password.length === 0 || this.state.fName.length === 0 || this.state.lName.length === 0 || this.state.email.length === 0
+          || this.state.postcode.length === 0 || this.state.selectedDay === null){
+          alert("Please fill in all fields")
+        }else{
+          const data = {
+            userName: (this.state.userName),
+            password: (this.state.password),
+            email: (this.state.email),
+            fName:  (this.state.fName),
+            lName: (this.state.lName),
+            dateOfBirth: (this.state.selectedDay),
+            postcode: (this.state.postcode),
+            area: null,
+            type: "Customer"
+          }
+            axios.post('http://localhost:9090/milk4u/addUser', data)
+            this.props.history.push("/Products");
+
+            }
+
       }
     
     render() {
         return (
             <div><Navigation />
-                <form className="boxColumn">
+                <form className="boxColumn" onSubmit={this.handleSubmit}>
                 <label htmlFor="uName">Username:</label>
                     <input type="text" id="uName" name="uName" value={this.state.userName} onChange={this.handleUserNameChange}/>
                     <label htmlFor="pass">Password:</label>
@@ -89,9 +97,9 @@ class CustomerRegistration extends Component {
                     <label htmlFor="postcode">Post Code:</label>
                     <input type="text" id="postcode" name="postcode" value={this.state.postcode} onChange={this.handlePostcodeChange}/>
                     <DayPicker onDayClick={this.handleDayClick}/>  
-                        <Link to ='/Products' onClick={this.handleSubmit}>
+                        {/* <Link to ='/Products' > */}
                         <input type="submit" value="Register" />
-                        </Link>
+                        {/* </Link> */}
                 </form>
             </div>
         )
