@@ -1,35 +1,40 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Orders from './Orders'
 import Navigation from './Navigation'
+import axios from 'axios';
 
-function DropList() {
-    const orders = [
-        {
-            id: 1,
-            customerName: 'Jhon Green',
-            postcode: 'LE5 47G',
-        }, 
-        {
-            id: 2,
-            customerName: 'Steve Jhon',
-            postcode: 'LE5 23M',
-        }, 
-        {
-            id: 3,
-            customerName: 'David Granger',
-            postcode: 'LE5 90D',
+class DropList extends Component {
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+             orderList: [],
         }
-        ];
-        const orderList = orders.map(order => <Orders key = {order.id} order = {order} />)
-        
-    return (
-        <div><Navigation />
-        <div>
-            <div >{orderList}</div>
-            <button>Print Droplist</button>
-        </div>
-        </div>
-    )
-}
+    }
+
+    componentDidMount() {
+        axios.get('http://localhost:9090/milk4u/getDroplist', {
+            params: {
+              id: sessionStorage.getItem('UserId')
+            }
+          }).then(res => {
+            this.setState({orderList : res.data});
+          });    
+    }
+    
+    render() {
+        let droplist = this.state.orderList.map(order => <Orders key = {order.cstId} order = {order} />)
+        return (
+            <div><Navigation />
+            <div>
+                <div >{droplist}</div>
+                <button>Print Droplist</button>
+            </div>
+            </div>
+        )
+    }
+    }
+
+
 
 export default DropList

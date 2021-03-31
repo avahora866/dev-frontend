@@ -22,7 +22,6 @@ class Admin extends Component {
           }).then(res => {
             this.setState({adminList : res.data});
           });    
-
     }
 
     render() {
