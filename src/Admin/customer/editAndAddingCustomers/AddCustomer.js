@@ -65,7 +65,7 @@ class AddCustomer extends Component {
           email: (this.state.email),
           fName:  (this.state.fName),
           lName: (this.state.lName),
-          dateOfBirth: "2003-12-12",
+          dateOfBirth: (this.state.selectedDay),
           postcode: (this.state.postcode),
           area: null,
           type: "Customer"
