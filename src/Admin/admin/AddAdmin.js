@@ -32,16 +32,22 @@ function AddAdmin() {
       }
 
       function handleSubmit(event) {
+        if(fName.length === 0  || lName.length === 0 || email.length === 0 || userName.length === 0 || password === 0){
+            alert("Please fill in all the fields")
+            event.preventDefault();
+          }else{
+            const data = {
+              userName: userName,
+              password: password,
+              email: email,
+              fName:  fName,
+              lName: lName,
+              type: "Admin"
+            }
+              axios.post('http://localhost:9090/milk4u/addUser', data);
+          }
 
-      const data = {
-        userName: userName,
-        password: password,
-        email: email,
-        fName:  fName,
-        lName: lName,
-        type: "Admin"
-      }
-        axios.post('http://localhost:9090/milk4u/addUser', data);
+      
     }
 
 

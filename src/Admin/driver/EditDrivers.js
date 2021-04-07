@@ -39,18 +39,29 @@ function EditDrivers() {
         setArea(event.target.value)
       }
 
-      function handleSubmit(event) {   
-        const data = {
-          id: driverId,
-          userName: userName,
-          password: password,
-          email: email,
-          fName: fName,
-          lName: lName,
-          postCode: null,
-          area: area
-        }     
-          axios.put('http://localhost:9090/milk4u/editUsers', data)
+      function handleSubmit(event) {  
+        if(fName.length === 0  || lName.length === 0 || email.length === 0 || userName.length === 0 || password === 0 || area === 0){
+          alert("Please fill in all the fields")
+          event.preventDefault();
+        } else{
+          const data = {
+            id: driverId,
+            userName: userName,
+            password: password,
+            email: email,
+            fName: fName,
+            lName: lName,
+            postCode: null,
+            area: area
+          }     
+            axios.put('http://localhost:9090/milk4u/editUsers', data).then((response) => {
+            }, (error) => {
+              console.log(error)
+              alert("UserID not found")
+              event.preventDefault();
+            });
+        }
+        
       }
 
     return (

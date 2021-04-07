@@ -40,18 +40,24 @@ function EditCustomer() {
 
 
 
-      function handleSubmit(event) {   
-        const data = {
-          id: cstId,
-          userName: userName,
-          password: password,
-          email: email,
-          fName: fName,
-          lName: lName,
-          postCode: postcode,
-          area: null,
-        }     
-          axios.put('http://localhost:9090/milk4u/editUsers', data)
+      function handleSubmit(event) {
+        if(userName.length === 0  || password.length === 0 || fName.length === 0 || lName.length === 0 || email.length === 0 || postcode.length === 0){
+            alert("Please fill in all the fields")
+            event.preventDefault();
+          } else{
+            const data = {
+              id: cstId,
+              userName: userName,
+              password: password,
+              email: email,
+              fName: fName,
+              lName: lName,
+              postCode: postcode,
+              area: null,
+            }     
+              axios.put('http://localhost:9090/milk4u/editUsers', data)
+          }  
+        
       }
 
 

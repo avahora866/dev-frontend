@@ -39,35 +39,40 @@ function AddDriver() {
 
 
       function handleSubmit(event) {
-
-      const data = {
-        userName: userName,
-        password: password,
-        email: email,
-        fName:  fName,
-        lName: lName,
-        area: area,
-        type: "Driver"
-      }
-        axios.post('http://localhost:9090/milk4u/addUser', data);
+        if(fName.length === 0  || lName.length === 0 || email.length === 0 || userName.length === 0 || password === 0 || area === 0){
+          alert("Please fill in all the fields")
+          event.preventDefault();
+        }else{
+          const data = {
+            userName: userName,
+            password: password,
+            email: email,
+            fName:  fName,
+            lName: lName,
+            area: area,
+            type: "Driver"
+          }
+            axios.post('http://localhost:9090/milk4u/addUser', data);
+        }
+     
     }
     return (
         <div><Navigation />
             <form className="boxColumnSingle">
-                <label for="uName">Username:</label>
-                <input className="paddingBottom" type="text" id="uName" name="uName" value={userName} onChange={handleUserNameChange}/>
-                <label for="pass">Password:</label>
-                <input className="paddingBottom" type="text" id="pass" name="pass" value={password} onChange={handlePassChange}/>
-                <label for="email">Email:</label>
-                <input className="paddingBottom" type="text" id="email" name="email" value={email} onChange={handleEmailChange}/>
-                <label for="name">First Name:</label>
-                <input className="paddingBottom" type="text" id="fName" name="fName" value={fName} onChange={handlefNameChange}/> 
-                <label for="name">Last Name:</label>
-                <input className="paddingBottom" type="text" id="lName" name="lName" value={lName} onChange={handlelNameChange}/> 
-                <label for="area">Area:</label>
-                <input className="paddingBottom" type="text" id="area" name="area" value={area} onChange={handleAreaChange}/>
+                <label>Username:</label>
+                <input className="paddingBottom" type="text" value={userName} onChange={handleUserNameChange}/>
+                <label>Password:</label>
+                <input className="paddingBottom" type="text"  value={password} onChange={handlePassChange}/>
+                <label>Email:</label>
+                <input className="paddingBottom" type="text" value={email} onChange={handleEmailChange}/>
+                <label>First Name:</label>
+                <input className="paddingBottom" type="text" value={fName} onChange={handlefNameChange}/> 
+                <label>Last Name:</label>
+                <input className="paddingBottom" type="text" value={lName} onChange={handlelNameChange}/> 
+                <label>Area:</label>
+                <input className="paddingBottom" type="text" value={area} onChange={handleAreaChange}/>
                 <Link to = '/DriverList' onClick={handleSubmit}>
-                    <input type="submit" value="Edit" />
+                    <input type="submit" value="Add Driver" />
                 </Link>
             </form>
         </div>

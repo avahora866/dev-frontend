@@ -20,7 +20,7 @@ function SingleProduct({product}) {
             <label className="paddingBottom">ID: {product.productId}</label>
             <label className="paddingBottom">Name: {product.name}</label>
             <label className="paddingBottom">Description: {product.description}</label>
-            <label className="paddingBottom">Price: {product.price}</label>
+            <label className="paddingBottom">Price: £{product.price}</label>
             <span>
                 <Link to={{pathname:"/EditProduct", data:prod}}>
                     <button className="margin">Edit</button>

@@ -22,14 +22,32 @@ function EditProduct() {
         setPrice(event.target.value)
       }
 
-      function handleSubmit(event) {   
+      function handleSubmit(event) {  
+        if(name.length === 0  || description.length === 0){
+          alert("Please fill in all the fields")
+          event.preventDefault();
+        }else if(price === 0){
+          alert("Price cannot be 0")
+          event.preventDefault();
+        }else{
+          if(price === 1){
+            console.log("Passed")
+          }
         const data = {
           id: productId,
           name: name,
           description: description,
           price: price,
         }     
-          axios.put('http://localhost:9090/milk4u/editProducts', data)
+          axios.put('http://localhost:9090/milk4u/editProducts', data).then((response) => {
+          }, (error) => {
+            console.log(error)
+            alert("ProductID not found")
+            event.preventDefault();
+          });
+          event.preventDefault();
+
+        }
       }
 
     return (
@@ -37,11 +55,11 @@ function EditProduct() {
             <form className="boxColumn">
                 <label className="paddingBottom">Product ID {productId}</label>
                 <label>Name:</label>
-                <input className="paddingBottom" type="text" id="name" name="name" value={name} onChange={handleNameChange}/> 
+                <input className="paddingBottom" type="text" value={name} onChange={handleNameChange}/> 
                 <label>Description:</label>
-                <input className="paddingBottom" type="text" id="description" name="description" value={description} onChange={handleDescriptionChange}/> 
+                <input className="paddingBottom" type="text" value={description} onChange={handleDescriptionChange}/> 
                 <label>Price:</label>
-                <input className="paddingBottom" type="number" id="price" name="price" value={price} onChange={handlePriceChange}/> 
+                <input className="paddingBottom" type="number" min="0" value={price} onChange={handlePriceChange}/> 
                 <Link to = '/ProductList' onClick={handleSubmit}>
                     <input type="submit" value="Edit" />
                 </Link>

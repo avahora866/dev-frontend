@@ -58,24 +58,31 @@ class AddCustomer extends Component {
       }
 
       handleSubmit(event) {
-        const data = {
-          userName: (this.state.userName),
-          password: (this.state.password),
-          email: (this.state.email),
-          fName:  (this.state.fName),
-          lName: (this.state.lName),
-          dateOfBirth: (this.state.selectedDay),
-          postcode: (this.state.postcode),
-          area: null,
-          type: "Customer"
-        }
-        axios.post('http://localhost:9090/milk4u/addUser', data).then((response) => {
-          this.props.history.push("/CustomerList");
-        }, (error) => {
-          console.log(error)
-          alert("Date of birth invalid")
-        });
-        event.preventDefault();
+        if(this.state.userName.length === 0  || this.state.password.length === 0 || this.state.fName.length === 0 || this.state.lName.length === 0 || this.state.email.length === 0
+          || this.state.postcode.length === 0 || this.state.selectedDay === null){
+            alert("Please fill in all the fields")
+            event.preventDefault();
+          }else{
+            const data = {
+              userName: (this.state.userName),
+              password: (this.state.password),
+              email: (this.state.email),
+              fName:  (this.state.fName),
+              lName: (this.state.lName),
+              dateOfBirth: (this.state.selectedDay),
+              postcode: (this.state.postcode),
+              area: null,
+              type: "Customer"
+            }
+            axios.post('http://localhost:9090/milk4u/addUser', data).then((response) => {
+              this.props.history.push("/CustomerList");
+            }, (error) => {
+              console.log(error)
+              alert("Date of birth invalid")
+            });
+            event.preventDefault();
+          }
+
       }
     
     render() {

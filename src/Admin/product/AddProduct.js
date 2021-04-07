@@ -22,24 +22,33 @@ function AddProduct() {
         setPrice(event.target.value)
       }
 
-      function handleSubmit(){
-      const data = {
-        name: name,
-        description: description,
-        price: price
-      }
-        axios.post('http://localhost:9090/milk4u/addProduct', data);
+      function handleSubmit(event){
+        if(name.length === 0  || description.length === 0){
+          alert("Please fill in all the fields")
+          event.preventDefault();
+        }else if(price === 0){
+          alert("Price cannot be 0")
+          event.preventDefault();
+        }else{
+          const data = {
+            name: name,
+            description: description,
+            price: price
+          }
+            axios.post('http://localhost:9090/milk4u/addProduct', data);
+        }
+      
     }
 
     return (
         <div><Navigation />
             <form className="boxColumnSingle">
-                <label for="name">Name:</label>
-                <input className="paddingBottom" type="text" id="name" name="name" value={name} onChange={handleNameChange}/> 
-                <label  for="description">Description:</label>
-                <input className="paddingBottom" type="text" id="description" name="description" value={description} onChange={handleDescriptionChange}/> 
-                <label  for="price">Price:</label>
-                <input className="paddingBottom" type="number" id="price" name="price" value={price} onChange={handlePriceChange}/> 
+                <label>Name:</label>
+                <input className="paddingBottom" type="text" value={name} onChange={handleNameChange}/> 
+                <label>Description:</label>
+                <input className="paddingBottom" type="text" value={description} onChange={handleDescriptionChange}/> 
+                <label>Price:</label>
+                <input className="paddingBottom" min="0" type="number" value={price} onChange={handlePriceChange}/> 
                 <Link to = "/ProductList" onClick={handleSubmit}>
                     <input type="submit" value="Add" />
                 </Link>
