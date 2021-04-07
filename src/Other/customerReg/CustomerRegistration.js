@@ -15,7 +15,7 @@ class CustomerRegistration extends Component {
             fName: '',
             lName: '',
             postcode: '',
-            selectedDay: undefined
+            selectedDay: new Date()
         }
 
         this.handleDayClick = this.handleDayClick.bind(this);
@@ -29,7 +29,7 @@ class CustomerRegistration extends Component {
     }
 
     handleDayClick(day) {
-        this.setState({ selectedDay: day });
+        this.setState({ selectedDay: day.target.value });
       }
 
       handleUserNameChange(event) {
@@ -72,11 +72,15 @@ class CustomerRegistration extends Component {
             area: null,
             type: "Customer"
           }
-            axios.post('http://localhost:9090/milk4u/addUser', data)
-            this.props.history.push("/Products");
+            axios.post('http://localhost:9090/milk4u/addUser', data).then((response) => {
+              this.props.history.push("/");
+            }, (error) => {
+              console.log(error)
+              alert("Date of birth invalid")
+            });
+            event.preventDefault();
 
-            }
-
+          }
       }
     
     render() {
@@ -95,7 +99,8 @@ class CustomerRegistration extends Component {
                     <input type="text" id="email" name="email" value={this.state.email} onChange={this.handleEmailChange}/>
                     <label htmlFor="postcode">Post Code:</label>
                     <input type="text" id="postcode" name="postcode" value={this.state.postcode} onChange={this.handlePostcodeChange}/>
-                    <input type="date" id="start" name="trip-start" onChange={this.handleDayClick}></input>
+                    <label htmlFor="dateOfBirth">D.O.B:</label>
+                    <input type="date" id="start" name="trip-start" value={this.state.selectedDay} onChange={this.handleDayClick}></input>
                         {/* <Link to ='/Products' > */}
                         <input type="submit" value="Register" />
                         {/* </Link> */}

@@ -69,7 +69,13 @@ class AddCustomer extends Component {
           area: null,
           type: "Customer"
         }
-          axios.post('http://localhost:9090/milk4u/addUser', data);
+        axios.post('http://localhost:9090/milk4u/addUser', data).then((response) => {
+          this.props.history.push("/CustomerList");
+        }, (error) => {
+          console.log(error)
+          alert("Date of birth invalid")
+        });
+        event.preventDefault();
       }
     
     render() {
