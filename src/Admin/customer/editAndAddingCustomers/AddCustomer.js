@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
 import Navigation from '../../Navigation';
-import DayPicker from './DayPicker'
 import '../../../Styles.css'
 import axios from 'axios';
 
@@ -31,7 +30,7 @@ class AddCustomer extends Component {
     }
 
     handleDayClick(day) {
-        this.setState({ selectedDay: day });
+        this.setState({ selectedDay: day.target.value });
       }
 
       handleUserNameChange(event) {
@@ -90,7 +89,7 @@ class AddCustomer extends Component {
                     <label>Postcode:</label>
                     <input className="paddingBottom" type="text" id="postcode" name="postcode" value={this.state.postcode} onChange={this.handlePostcodeChange}/>
                     <label>D.O.B:</label>
-                        <DayPicker onDayClick={this.handleDayClick}/>
+                    <input type="date" id="start" name="trip-start" onChange={this.handleDayClick}></input>
                     <Link to = '/CustomerList' onClick={this.handleSubmit}>
                         <input type="submit" value="Add Customer" />
                     </Link>

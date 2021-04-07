@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import DayPicker from './DayPicker';
 import {Link} from 'react-router-dom';
 import Navigation from '../Navigation';
 import './CustomerRegistration.css'
@@ -96,7 +95,7 @@ class CustomerRegistration extends Component {
                     <input type="text" id="email" name="email" value={this.state.email} onChange={this.handleEmailChange}/>
                     <label htmlFor="postcode">Post Code:</label>
                     <input type="text" id="postcode" name="postcode" value={this.state.postcode} onChange={this.handlePostcodeChange}/>
-                    <DayPicker onDayClick={this.handleDayClick}/>  
+                    <input type="date" id="start" name="trip-start" onChange={this.handleDayClick}></input>
                         {/* <Link to ='/Products' > */}
                         <input type="submit" value="Register" />
                         {/* </Link> */}
