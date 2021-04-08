@@ -36,6 +36,7 @@ function AddProduct() {
             price: price
           }
             axios.post('http://localhost:9090/milk4u/addProduct', data);
+
         }
       
     }
@@ -49,7 +50,7 @@ function AddProduct() {
                 <input className="paddingBottom" type="text" value={description} onChange={handleDescriptionChange}/> 
                 <label>Price:</label>
                 <input className="paddingBottom" min="0" type="number" value={price} onChange={handlePriceChange}/> 
-                <Link to = "/ProductList" onClick={handleSubmit}>
+                <Link to="/ProductList" onClick={handleSubmit}>
                     <input type="submit" value="Add" />
                 </Link>
             </form>

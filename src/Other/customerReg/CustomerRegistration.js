@@ -101,9 +101,7 @@ class CustomerRegistration extends Component {
                     <input type="text" id="postcode" name="postcode" value={this.state.postcode} onChange={this.handlePostcodeChange}/>
                     <label htmlFor="dateOfBirth">D.O.B:</label>
                     <input type="date" id="start" name="trip-start" value={this.state.selectedDay} onChange={this.handleDayClick}></input>
-                        {/* <Link to ='/Products' > */}
-                        <input type="submit" value="Register" />
-                        {/* </Link> */}
+                    <input type="submit" value="Register" />
                 </form>
             </div>
         )

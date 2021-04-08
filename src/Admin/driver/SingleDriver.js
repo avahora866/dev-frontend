@@ -23,7 +23,7 @@ function SingleDriver({driver}) {
             <label className="paddingBottom">Email: {driver.email}</label>
             <label className="paddingBottom">Username: {driver.username}</label>
             <label className="paddingBottom">Password: {driver.password}</label>
-            <label className="paddingBottom">Password: {driver.area}</label>
+            <label className="paddingBottom">Area: {driver.area}</label>
             <span>
                 <Link to={{pathname:"/EditDriver", data:driv}}>
                    <button className="margin">Edit</button>

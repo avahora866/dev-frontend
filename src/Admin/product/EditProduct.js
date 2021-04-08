@@ -23,30 +23,22 @@ function EditProduct() {
       }
 
       function handleSubmit(event) {  
+
+        let number = parseInt(price);
         if(name.length === 0  || description.length === 0){
           alert("Please fill in all the fields")
           event.preventDefault();
-        }else if(price === 0){
+        }else if(number === 0.00){
           alert("Price cannot be 0")
           event.preventDefault();
         }else{
-          if(price === 1){
-            console.log("Passed")
-          }
-        const data = {
-          id: productId,
-          name: name,
-          description: description,
-          price: price,
-        }     
-          axios.put('http://localhost:9090/milk4u/editProducts', data).then((response) => {
-          }, (error) => {
-            console.log(error)
-            alert("ProductID not found")
-            event.preventDefault();
-          });
-          event.preventDefault();
-
+            const data = {
+              id: productId,
+              name: name,
+              description: description,
+              price: price,
+            }     
+            axios.put('http://localhost:9090/milk4u/editProducts', data)            
         }
       }
 
@@ -60,7 +52,7 @@ function EditProduct() {
                 <input className="paddingBottom" type="text" value={description} onChange={handleDescriptionChange}/> 
                 <label>Price:</label>
                 <input className="paddingBottom" type="number" min="0" value={price} onChange={handlePriceChange}/> 
-                <Link to = '/ProductList' onClick={handleSubmit}>
+                <Link to='/ProductList' onClick={handleSubmit}>
                     <input type="submit" value="Edit" />
                 </Link>
             </form>
