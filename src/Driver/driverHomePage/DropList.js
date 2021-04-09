@@ -26,10 +26,9 @@ class DropList extends Component {
         let droplist = this.state.orderList.map(order => <Orders key = {order.cstId} order = {order} />)
         return (
             <div><Navigation />
-            <div>
-                <div >{droplist}</div>
+                <h2>Droplist for {sessionStorage.getItem('fName')} {sessionStorage.getItem('lName')}</h2>
+                <div className="grid">{droplist}</div>
                 <button>Print Droplist</button>
-            </div>
             </div>
         )
     }
