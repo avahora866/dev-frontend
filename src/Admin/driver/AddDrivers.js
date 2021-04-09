@@ -58,7 +58,7 @@ function AddDriver() {
     }
     return (
         <div><Navigation />
-            <form className="boxColumnSingle">
+            <form className="boxColumn">
                 <label>Username:</label>
                 <input className="paddingBottom" type="text" value={userName} onChange={handleUserNameChange}/>
                 <label>Password:</label>
@@ -72,7 +72,7 @@ function AddDriver() {
                 <label>Area:</label>
                 <input className="paddingBottom" type="text" value={area} onChange={handleAreaChange}/>
                 <Link to = '/DriverList' onClick={handleSubmit}>
-                    <input type="submit" value="Add Driver" />
+                    <input type="submit" value="Add Driver" className="margin2"/>
                 </Link>
             </form>
         </div>

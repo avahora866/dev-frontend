@@ -27,13 +27,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 1em;
+    border: 0.5px solid black;
 }
 
 .paddingBottom {
     padding-bottom: 0.2em;
 }
 
-.btnSingle {
-    max-height: 2em;
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.margin2 {
+    margin: 0.5em;
 }

@@ -28,7 +28,7 @@ function SingleDriver({driver}) {
                 <Link to={{pathname:"/EditDriver", data:driv}}>
                    <button className="margin">Edit</button>
                 </Link>
-                <button onClick={removeDriver} className="btnSingle">Remove</button>
+                <button onClick={removeDriver} className="margin">Remove</button>
             </span>
         </section>
     )

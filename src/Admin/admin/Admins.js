@@ -30,9 +30,9 @@ class Admin extends Component {
             <div><Navigation /> 
                 <div>
                     <h2>Admin List</h2>
-                    <div >{register}</div>
+                    <div className="grid">{register}</div>
                     <Link to='/AddAdmin'>
-                        <button>Add Admin</button>
+                        <button className="margin2">Add Admin</button>
                     </Link>
                 </div>
             </div>

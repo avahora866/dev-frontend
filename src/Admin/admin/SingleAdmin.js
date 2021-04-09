@@ -27,7 +27,7 @@ function SingleAdmin({admin}) {
                     <Link to={{pathname:"/EditAdmin", data:adm}}>
                         <button className="margin">Edit</button>
                     </Link>
-                    <button onClick={removeAdmin} className="btnSingle">Remove</button>
+                    <button onClick={removeAdmin} className="margin">Remove</button>
                 </span>
         </section>
     )

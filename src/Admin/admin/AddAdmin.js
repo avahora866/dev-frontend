@@ -53,7 +53,7 @@ function AddAdmin() {
 
     return (
         <div><Navigation />
-            <form className="boxColumnSingle">
+            <form className="boxColumn">
                 <label>First Name:</label>
                 <input className="paddingBottom" type="text" id="fName" name="fName" value={fName} onChange={handlefNameChange}/> 
                 <label>Last Name:</label>
@@ -65,7 +65,7 @@ function AddAdmin() {
                 <label>Password:</label>
                 <input className="paddingBottom" type="text" id="pass" name="pass" value={password} onChange={handlePassChange}/>
                 <Link to="/AdminList" onClick={handleSubmit}>
-                    <input type="submit" value="Add Admin" />
+                    <input type="submit" value="Add Admin" className="margin2"/>
                 </Link>
                     
             </form>

@@ -29,9 +29,9 @@ class Customer extends Component {
             <div><Navigation /> 
                 <div>
                 <h2>Customer List</h2>
-                    <div >{register}</div>
+                    <div className="grid">{register}</div>
                     <Link to='/AddCustomer'>
-                        <button>Add Customer</button>
+                        <button className="margin2">Add Customer</button>
                     </Link>
                 </div>
             </div>

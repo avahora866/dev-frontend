@@ -25,9 +25,9 @@ class ProductList extends Component {
             <div><Navigation /> 
                 <div>
                 <h2>Product List</h2>
-                    <div >{register}</div>
+                    <div className="grid">{register}</div>
                     <Link to='/AddProduct'>
-                        <button>Add Product</button>
+                        <button className="margin2">Add Product</button>
                     </Link>
                 </div>
             </div>

@@ -53,7 +53,7 @@ function EditProduct() {
                 <label>Price:</label>
                 <input className="paddingBottom" type="number" min="0" value={price} onChange={handlePriceChange}/> 
                 <Link to='/ProductList' onClick={handleSubmit}>
-                    <input type="submit" value="Edit" />
+                    <input type="submit" value="Edit" className="margin2"/>
                 </Link>
             </form>
         </div>

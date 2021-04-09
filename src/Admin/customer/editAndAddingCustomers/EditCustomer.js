@@ -78,7 +78,7 @@ function EditCustomer() {
                 <label >Postcode:</label>
                 <input className="paddingBottom" type="text" id="email" name="postcode" value={postcode} onChange={handlePostCodeChange}/> 
                 <Link to = '/CustomerList' onClick={handleSubmit}>
-                    <input type="submit" value="Edit" />
+                    <input type="submit" value="Edit" className="margin2"/>
                 </Link>
             </form>
         </div>

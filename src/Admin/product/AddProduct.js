@@ -43,7 +43,7 @@ function AddProduct() {
 
     return (
         <div><Navigation />
-            <form className="boxColumnSingle">
+            <form className="boxColumn">
                 <label>Name:</label>
                 <input className="paddingBottom" type="text" value={name} onChange={handleNameChange}/> 
                 <label>Description:</label>
@@ -51,7 +51,7 @@ function AddProduct() {
                 <label>Price:</label>
                 <input className="paddingBottom" min="0" type="number" value={price} onChange={handlePriceChange}/> 
                 <Link to="/ProductList" onClick={handleSubmit}>
-                    <input type="submit" value="Add" />
+                    <input type="submit" value="Add" className="margin2"/>
                 </Link>
             </form>
         </div>

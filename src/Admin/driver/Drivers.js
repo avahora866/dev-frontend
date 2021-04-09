@@ -29,9 +29,9 @@ class Driver extends Component {
             <div><Navigation /> 
                 <div>
                 <h2>Driver List</h2>
-                    <div >{register}</div>
+                    <div className="grid">{register}</div>
                     <Link to='/AddDriver'>
-                        <button>Add Driver</button>
+                        <button className="margin2">Add Driver</button>
                     </Link>
                 </div>
             </div>

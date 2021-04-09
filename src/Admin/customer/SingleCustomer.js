@@ -30,7 +30,7 @@ function SingleCustomer({customer}) {
                     <Link to={{pathname:"/EditCustomer", data:cst}}>
                         <button className="margin">Edit</button>
                     </Link>
-                    <button onClick={removeCustomer} className="btnSingle">Remove</button>
+                    <button onClick={removeCustomer} className="margin">Remove</button>
                 </span>
         </section>
         

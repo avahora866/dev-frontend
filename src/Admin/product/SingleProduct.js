@@ -25,7 +25,7 @@ function SingleProduct({product}) {
                 <Link to={{pathname:"/EditProduct", data:prod}}>
                     <button className="margin">Edit</button>
                 </Link>
-                <button onClick={removeProduct} className="btnSingle">Remove</button>
+                <button onClick={removeProduct} className="margin">Remove</button>
             </span>
         </section>
     )

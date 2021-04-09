@@ -67,7 +67,7 @@ function EditDrivers() {
     return (
         <div><Navigation />
             <form className="boxColumn">
-                <label className="paddingBottom" >Driver Id:{driverId}</label>
+                <label className="paddingBottom" >Driver Id: {driverId}</label>
                 <label>Username:</label>
                 <input className="paddingBottom" type="text" id="uName" name="uName" value={userName} onChange={handleUserNameChange}/>
                 <label>Password:</label>
@@ -81,7 +81,7 @@ function EditDrivers() {
                 <label>Area:</label>
                 <input className="paddingBottom" type="text" id="area" name="area" value={area} onChange={handleAreaChange}/>
                 <Link to = '/DriverList' onClick={handleSubmit}>
-                    <input type="submit" value="Edit" />
+                    <input type="submit" value="Edit" className="margin2"/>
                 </Link>
             </form>
         </div>

@@ -74,7 +74,7 @@ function EditAdmins() {
                 <label >Password:</label>
                 <input  className="paddingBottom" type="text" name="pass" value={password} onChange={handlePassChange} />
                 <Link to="/AdminList" onClick={handleSubmit}> 
-                    <input type="submit" value="Edit"/>
+                    <input type="submit" value="Edit" className="margin2"/>
                 </Link>
             </form>
         </div>

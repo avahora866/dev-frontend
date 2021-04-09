@@ -88,7 +88,7 @@ class AddCustomer extends Component {
     render() {
         return (
             <div><Navigation />
-                <form className="boxColumnSingle">
+                <form className="boxColumn">
                 <label>Username:</label>
                     <input className="paddingBottom" type="text" value={this.state.userName} onChange={this.handleUserNameChange}/>
                     <label>Password:</label>
@@ -104,7 +104,7 @@ class AddCustomer extends Component {
                     <label>D.O.B:</label>
                     <input type="date" id="start" name="trip-start" onChange={this.handleDayClick}></input>
                     <Link to = '/CustomerList' onClick={this.handleSubmit}>
-                        <input type="submit" value="Add Customer" />
+                        <input type="submit" value="Add Customer" className="margin2"/>
                     </Link>
                 </form>
             </div>
