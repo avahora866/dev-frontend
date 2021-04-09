@@ -66,15 +66,13 @@ class Trolly extends Component {
 
         return (
             <div><Navigation />
-            <div >
-                <div>{prodList}</div>
+                <div className="grid">{prodList}</div>
                     <p>
                         <button className="margin" onClick={this.cancelTrolly}>Cancel</button>
                         <button className="margin" onClick={this.createOrder}>Create order</button>
                         <button className="margin" onClick={this.addToOrder}>Add to order</button>
                         <label className="margin">£{this.state.totalPrice}</label>
                     </p>
-                </div>
             </div>
                 )
     }

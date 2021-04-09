@@ -27,10 +27,9 @@ function SingleProduct({product}) {
     }
 
     return (
-        <section className="secBorder">
+        <section className="boxColumn">
             <span className="margin">
-                <h4 className="margin">{product.name} </h4>
-                <h4 className="margin">£{product.price} </h4>
+                <p className="margin">{product.name} £{product.price} </p>
             </span>
             <span className="margin">
                 <p className="margin">

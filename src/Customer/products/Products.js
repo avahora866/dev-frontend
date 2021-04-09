@@ -23,9 +23,7 @@ class Products extends Component {
             const prodList = this.state.productList.map(product => <SingleProduct key = {product.productId} product = {product} />)
         return (
             <div><Navigation />
-             <div>
-                 <div>{prodList}</div>
-             </div>
+                 <div className="grid">{prodList}</div>
              </div>
         )
     }

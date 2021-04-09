@@ -51,13 +51,11 @@ class Order extends Component {
 
         return (
             <div><Navigation />
-                <div >
-                    <div >{prodList}</div>
+                    <div className="grid">{prodList}</div>
                     <p>
                         <button className="margin" onClick={this.cancelOrder}>Cancel Order</button>
                         <label className="margin">Total: £{this.state.totalPrice}</label>
                     </p>
-                </div>
             </div>
         )
     }
