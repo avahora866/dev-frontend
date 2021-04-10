@@ -10,6 +10,17 @@ class DropList extends Component {
         this.state = {
              orderList: [],
         }
+
+        this.printDroplist = this.printDroplist.bind(this);
+
+    }
+
+    printDroplist() {
+        if(this.state.orderList.length === 0){
+            alert("here is no droplist to print")
+        }else{
+            axios.get('http://localhost:9090/milk4u/printDroplist')
+        }
     }
 
     componentDidMount() {
@@ -28,7 +39,7 @@ class DropList extends Component {
             <div><Navigation />
                 <h2>Droplist for {sessionStorage.getItem('fName')} {sessionStorage.getItem('lName')}</h2>
                 <div className="grid">{droplist}</div>
-                <button>Print Droplist</button>
+                <button onClick={this.printDroplist}>Print Droplist</button>
             </div>
         )
     }
