@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom';
-import Navigation from '../Navigation';
-import '../../Styles.css'
+import Navigation from './Navigation';
+import '.././Styles.css'
 import React, { Component } from 'react'
 import axios from 'axios';
 
@@ -30,7 +30,7 @@ class LoginPage extends Component {
         let url = '/'
 
         if(user.length === 0 || pass.length === 0){
-            alert("None of the fields may be left blank")
+            alert("Please enter your username and password.")
         }else{
             axios.post('http://localhost:9090/milk4u/verifyLogin', {
                 userName: user,
@@ -66,7 +66,7 @@ class LoginPage extends Component {
                   this.props.history.push(url);
               }, (error) => {
                   console.log(error)
-                alert("Login Failed")
+                alert("Username or Password entered was incorrect")
               });
               event.preventDefault();
         }
@@ -85,7 +85,7 @@ class LoginPage extends Component {
                     <input type="password" value={this.state.passWord} onChange={this.handlePassWordChange}  />
                 </span>
                 <span className="margin">
-                <input id="sub" type="submit" value="Submit" className="margin"/>  
+                <input id="sub" type="submit" value="Login" className="margin"/>  
                 <Link to='/CustomerRegistration'>
                     <button>Register</button>
                 </Link>

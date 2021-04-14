@@ -9,8 +9,8 @@ import DropList from './Driver/driverHomePage/DropList'
 import Order from './Customer/currentOrder/Order'
 import Products from './Customer/products/Products';
 import Trolly from './Customer/trolly/Trolly';
-import LoginPage from './Other/loginPage/LoginPage'
-import CustomerRegistration from './Other/customerReg/CustomerRegistration';
+import LoginPage from './Other/LoginPage'
+import CustomerRegistration from './Other/CustomerRegistration';
 import Admins from './Admin/admin/Admins';
 import Drivers from './Admin/driver/Drivers';
 import EditAdmins from './Admin/admin/EditAdmins';

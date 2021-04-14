@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
-import Navigation from '../Navigation';
-import './CustomerRegistration.css'
+import Navigation from './Navigation';
 import axios from 'axios';
 
 
@@ -59,7 +58,7 @@ class CustomerRegistration extends Component {
       handleSubmit(event) {
         if(this.state.userName.length === 0  || this.state.password.length === 0 || this.state.fName.length === 0 || this.state.lName.length === 0 || this.state.email.length === 0
           || this.state.postcode.length === 0 || this.state.selectedDay === null){
-          alert("Please fill in all fields")
+          alert("Please fill in all the fields")
         }else{
           const data = {
             userName: (this.state.userName),
