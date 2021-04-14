@@ -23,6 +23,10 @@ class Order extends Component {
             const temp = this.state.list[index]
             result += temp.price * temp.quantity;
         }
+        //Rounding to two decimal places
+        result = result * 100;
+        result = Math.round(result);
+        result = result / 100;
         this.setState({totalPrice: result})
     }
 

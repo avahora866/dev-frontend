@@ -27,6 +27,10 @@ class Trolly extends Component {
             const temp = this.state.list[index]
             result += temp.price * temp.quantity;
         }
+        //Rounding to two decimal places
+        result = result * 100;
+        result = Math.round(result);
+        result = result / 100;
         this.setState({totalPrice: result})
     }
 
@@ -71,7 +75,7 @@ class Trolly extends Component {
                         <button className="margin" onClick={this.cancelTrolly}>Cancel</button>
                         <button className="margin" onClick={this.createOrder}>Create order</button>
                         <button className="margin" onClick={this.addToOrder}>Add to order</button>
-                        <label className="margin">£{this.state.totalPrice}</label>
+                        <label className="margin">Total Price: £{this.state.totalPrice}</label>
                     </p>
             </div>
                 )
