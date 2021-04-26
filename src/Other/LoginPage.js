@@ -75,7 +75,8 @@ class LoginPage extends Component {
     render() {
         return (
             <div><Navigation />
-             <form onSubmit={this.handleSubmit} className="boxColumn">
+            <section className="login">
+            <form onSubmit={this.handleSubmit} className="formStyling">
                 <span className="margin">
                     <label className="margin">Username:</label>    
                     <input type="text" value={this.state.uName} onChange={this.handleUnameChange}  />        
@@ -91,6 +92,12 @@ class LoginPage extends Component {
                 </Link>
                 </span>
             </form>
+            <article className="headings">
+                <h1 style={{ color: '#ab4bde' }}>Welcome to Milk4U</h1>
+                <h2 style={{ color: '#ab4bde' }}>Feel free to log in or register anytime.</h2>
+            </article>
+            </section>
+
         </div>
         )
     }
