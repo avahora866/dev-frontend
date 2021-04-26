@@ -58,23 +58,28 @@ function AddDriver() {
     }
     return (
         <div><Navigation />
+        <section className="sectionAdm">
             <form className="boxColumn">
-                <label>Username:</label>
-                <input className="paddingBottom" type="text" value={userName} onChange={handleUserNameChange}/>
-                <label>Password:</label>
-                <input className="paddingBottom" type="text"  value={password} onChange={handlePassChange}/>
-                <label>Email:</label>
-                <input className="paddingBottom" type="text" value={email} onChange={handleEmailChange}/>
-                <label>First Name:</label>
-                <input className="paddingBottom" type="text" value={fName} onChange={handlefNameChange}/> 
-                <label>Last Name:</label>
-                <input className="paddingBottom" type="text" value={lName} onChange={handlelNameChange}/> 
-                <label>Area:</label>
-                <input className="paddingBottom" type="text" value={area} onChange={handleAreaChange}/>
-                <Link to = '/DriverList' onClick={handleSubmit}>
-                    <input type="submit" value="Add Driver" className="margin2"/>
+                <label style={{margin: "0.2em"}}>Username:</label>
+                <input type="text" value={userName} onChange={handleUserNameChange}/>
+                <label style={{margin: "0.2em"}}>Password:</label>
+                <input type="text"  value={password} onChange={handlePassChange}/>
+                <label style={{margin: "0.2em"}}>Email:</label>
+                <input type="text" value={email} onChange={handleEmailChange}/>
+                <label style={{margin: "0.2em"}}>First Name:</label>
+                <input type="text" value={fName} onChange={handlefNameChange}/> 
+                <label style={{margin: "0.2em"}}>Last Name:</label>
+                <input type="text" value={lName} onChange={handlelNameChange}/> 
+                <label style={{margin: "0.2em"}}>Area:</label>
+                <input type="text" value={area} onChange={handleAreaChange}/>
+                <Link to='/DriverList' onClick={handleSubmit}>
+                    <input type="submit" value="Add Driver" className="loginBtns"/>
                 </Link>
             </form>
+            <p>
+              Please fill in all of the fields to create a new driver.
+            </p>
+          </section>
         </div>
     )
 }

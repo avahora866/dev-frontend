@@ -43,17 +43,23 @@ function AddProduct() {
 
     return (
         <div><Navigation />
+        <section className="sectionAdm">
             <form className="boxColumn">
-                <label>Name:</label>
-                <input className="paddingBottom" type="text" value={name} onChange={handleNameChange}/> 
-                <label>Description:</label>
-                <input className="paddingBottom" type="text" value={description} onChange={handleDescriptionChange}/> 
-                <label>Price:</label>
-                <input className="paddingBottom" min="0" type="number" value={price} onChange={handlePriceChange}/> 
+                <label style={{margin: "0.2em"}}>Name:</label>
+                <input type="text" value={name} onChange={handleNameChange}/> 
+                <label style={{margin: "0.2em"}}>Description:</label>
+                <input type="text" value={description} onChange={handleDescriptionChange}/> 
+                <label style={{margin: "0.2em"}}>Price:</label>
+                <input min="0" type="number" value={price} onChange={handlePriceChange}/> 
                 <Link to="/ProductList" onClick={handleSubmit}>
-                    <input type="submit" value="Add" className="margin2"/>
+                    <input type="submit" value="Add" className="loginBtns"/>
                 </Link>
             </form>
+            <p>
+              Please fill in all of the fields to create a new product.
+              NOTE: Price cannot be set to 0.
+            </p>            
+          </section>  
         </div>
     )
 

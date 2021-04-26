@@ -28,7 +28,7 @@ class Customer extends Component {
         return (
             <div><Navigation /> 
                 <div>
-                <h2>Customer List</h2>
+                <h2 style={{color: "#2d68e3"}}>Customer List</h2>
                     <div className="grid">{register}</div>
                     <Link to='/AddCustomer'>
                         <button className="margin2">Add Customer</button>

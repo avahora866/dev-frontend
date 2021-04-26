@@ -16,20 +16,20 @@ function SingleDriver({driver}) {
         window.location.reload()
     }
     return (
-        <section className="boxColumnSingle">
-            <label className="paddingBottom">ID: {driver.userId}</label>
-            <label className="paddingBottom">First Name: {driver.fName}</label>
-            <label className="paddingBottom">Last Name: {driver.lName}</label>
-            <label className="paddingBottom">Email: {driver.email}</label>
-            <label className="paddingBottom">Username: {driver.username}</label>
-            <label className="paddingBottom">Password: {driver.password}</label>
-            <label className="paddingBottom">Area: {driver.area}</label>
-            <span>
+        <section className="admStylingItem">
+            <label>ID: {driver.userId}</label>
+            <label>First Name: {driver.fName}</label>
+            <label>Last Name: {driver.lName}</label>
+            <label>Email: {driver.email}</label>
+            <label >Username: {driver.username}</label>
+            <label>Password: {driver.password}</label>
+            <label>Area: {driver.area}</label>
+            <div className="boxRow">
                 <Link to={{pathname:"/EditDriver", data:driv}}>
-                   <button className="margin">Edit</button>
+                   <button style={{margin: "0.2em"}}>Edit</button>
                 </Link>
-                <button onClick={removeDriver} className="margin">Remove</button>
-            </span>
+                <button onClick={removeDriver}>Remove</button>
+            </div>
         </section>
     )
 }

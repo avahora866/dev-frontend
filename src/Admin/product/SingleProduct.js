@@ -16,17 +16,17 @@ function SingleProduct({product}) {
         window.location.reload()
     }
     return (
-        <section className="boxColumnSingle">
-            <label className="paddingBottom">ID: {product.productId}</label>
-            <label className="paddingBottom">Name: {product.name}</label>
-            <label className="paddingBottom">Description: {product.description}</label>
-            <label className="paddingBottom">Price: £{product.price}</label>
-            <span>
+        <section className="admStylingItem">
+            <label>ID: {product.productId}</label>
+            <label>Name: {product.name}</label>
+            <label>Description: {product.description}</label>
+            <label>Price: £{product.price}</label>
+            <div className="boxRow">
                 <Link to={{pathname:"/EditProduct", data:prod}}>
-                    <button className="margin">Edit</button>
+                    <button style={{margin: "0.2em"}}>Edit</button>
                 </Link>
-                <button onClick={removeProduct} className="margin">Remove</button>
-            </span>
+                <button onClick={removeProduct}>Remove</button>
+            </div>
         </section>
     )
 }

@@ -28,7 +28,7 @@ class Driver extends Component {
         return (
             <div><Navigation /> 
                 <div>
-                <h2>Driver List</h2>
+                <h2 style={{color: "#2d68e3"}}>Driver List</h2>
                     <div className="grid">{register}</div>
                     <Link to='/AddDriver'>
                         <button className="margin2">Add Driver</button>

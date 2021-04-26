@@ -17,21 +17,21 @@ function SingleCustomer({customer}) {
             window.location.reload()
         }
     return (
-        <section className="boxColumnSingle">
-                <label className="paddingBottom">ID: {customer.userId}</label>
-                <label className="paddingBottom">First Name: {customer.fName}</label>
-                <label className="paddingBottom">Last Name: {customer.lName}</label>
-                <label className="paddingBottom">Email: {customer.email}</label>
-                <label className="paddingBottom">Postcode: {customer.postcode}</label>
-                <label className="paddingBottom">Username: {customer.username}</label>
-                <label className="paddingBottom">Password: {customer.password}</label>
-                <label className="paddingBottom">Date Of Birth: {customer.dateOfBirth}</label>
-                <span>
+        <section className="admStylingItem">
+                <label>ID: {customer.userId}</label>
+                <label>First Name: {customer.fName}</label>
+                <label>Last Name: {customer.lName}</label>
+                <label>Email: {customer.email}</label>
+                <label>Postcode: {customer.postcode}</label>
+                <label>Username: {customer.username}</label>
+                <label>Password: {customer.password}</label>
+                <label>Date Of Birth: {customer.dateOfBirth}</label>
+                <div className="boxRow">
                     <Link to={{pathname:"/EditCustomer", data:cst}}>
-                        <button className="margin">Edit</button>
+                        <button style={{margin: "0.2em"}}>Edit</button>
                     </Link>
-                    <button onClick={removeCustomer} className="margin">Remove</button>
-                </span>
+                    <button onClick={removeCustomer} >Remove</button>
+                </div>
         </section>
         
         

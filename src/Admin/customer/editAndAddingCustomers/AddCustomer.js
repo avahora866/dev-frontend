@@ -88,25 +88,31 @@ class AddCustomer extends Component {
     render() {
         return (
             <div><Navigation />
+              <section className="sectionAdm">
                 <form className="boxColumn">
-                <label>Username:</label>
-                    <input className="paddingBottom" type="text" value={this.state.userName} onChange={this.handleUserNameChange}/>
-                    <label>Password:</label>
-                    <input className="paddingBottom" type="text" id="pass" name="pass" value={this.state.password} onChange={this.handlePassChange}/>
-                    <label>Email:</label>
-                    <input className="paddingBottom" type="text" id="email" name="email" value={this.state.email} onChange={this.handleEmailChange}/>
-                    <label>First Name:</label>
-                    <input className="paddingBottom" type="text" id="fName" name="fName" value={this.state.fName} onChange={this.handlefNameChange}/>
-                    <label>Last Name:</label>
-                    <input className="paddingBottom" type="text" id="lName" name="lName" value={this.state.lName} onChange={this.handlelNameChange}/>
-                    <label>Postcode:</label>
-                    <input className="paddingBottom" type="text" id="postcode" name="postcode" value={this.state.postcode} onChange={this.handlePostcodeChange}/>
-                    <label>D.O.B:</label>
-                    <input type="date" id="start" name="trip-start" onChange={this.handleDayClick}></input>
+                    <label style={{margin: "0.2em"}}>Username:</label>
+                    <input type="text" value={this.state.userName} onChange={this.handleUserNameChange}/>
+                    <label style={{margin: "0.2em"}}>Password:</label>
+                    <input type="text" id="pass" name="pass" value={this.state.password} onChange={this.handlePassChange}/>
+                    <label style={{margin: "0.2em"}}>Email:</label>
+                    <input type="text" id="email" name="email" value={this.state.email} onChange={this.handleEmailChange}/>
+                    <label style={{margin: "0.2em"}}>First Name:</label>
+                    <input type="text" id="fName" name="fName" value={this.state.fName} onChange={this.handlefNameChange}/>
+                    <label style={{margin: "0.2em"}}>Last Name:</label>
+                    <input type="text" id="lName" name="lName" value={this.state.lName} onChange={this.handlelNameChange}/>
+                    <label style={{margin: "0.2em"}}>Postcode:</label>
+                    <input type="text" id="postcode" name="postcode" value={this.state.postcode} onChange={this.handlePostcodeChange}/>
+                    <label style={{margin: "0.2em"}}>D.O.B:</label>
+                    <input style={{margin: "0.2em"}} type="date" id="start" name="trip-start" onChange={this.handleDayClick}></input>
                     <Link to = '/CustomerList' onClick={this.handleSubmit}>
-                        <input type="submit" value="Add Customer" className="margin2"/>
+                        <input type="submit" value="Add Customer" className="loginBtns"/>
                     </Link>
-                </form>
+                  </form>
+                  <p>
+                    Please fill in all of the fields to create a new customer.
+                    NOTE: the customer added must be of 18 years of age.
+                  </p>
+                </section>
             </div>
         )
     }

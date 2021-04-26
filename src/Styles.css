@@ -73,6 +73,25 @@ button {
     padding: 2em;
 }
 
+.admStylingItem {
+    display: flex;
+    flex-direction: column;
+    background-color: #aabde6;
+    border-radius: 15%;
+    align-items: center;
+    margin: 0.5em;
+    padding: 3em;
+}
+
+.sectionAdm {
+    display: flex;
+    flex-direction: column;
+    background-color: #aabde6;
+    padding: 5vh 0;
+    margin: 5vh 25vh;
+    border-radius: 15%;
+}
+
 .margin {
     margin: 0.2em;
 }

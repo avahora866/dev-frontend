@@ -63,24 +63,29 @@ function EditCustomer() {
 
     return (
         <div><Navigation />
+        <section className="sectionAdm">
             <form className="boxColumn">
-                <label className="paddingBottom">Customer Id: {cstId}</label>
-                <label >Username:</label>
-                <input className="paddingBottom" type="text" id="uName" name="uName" value={userName} onChange={handleUserNameChange}/>
-                <label >Password:</label>
-                <input className="paddingBottom" type="text" id="pass" name="pass" value={password} onChange={handlePassChange}/>
-                <label >Email:</label>
-                <input className="paddingBottom" type="text" id="email" name="email" value={email} onChange={handleEmailChange}/>
-                <label>First Name:</label>
-                <input className="paddingBottom" type="text" id="name" name="name" value={fName} onChange={handlefNameChange}/>  
-                <label>Last Name:</label>
-                <input className="paddingBottom" type="text" id="name" name="name" value={lName} onChange={handlelNameChange}/>  
-                <label >Postcode:</label>
-                <input className="paddingBottom" type="text" id="email" name="postcode" value={postcode} onChange={handlePostCodeChange}/> 
+                <label style={{margin: "0.2em"}}>Customer Id: {cstId}</label>
+                <label style={{margin: "0.2em"}}>Username:</label>
+                <input type="text" id="uName" name="uName" value={userName} onChange={handleUserNameChange}/>
+                <label style={{margin: "0.2em"}}>Password:</label>
+                <input type="text" id="pass" name="pass" value={password} onChange={handlePassChange}/>
+                <label style={{margin: "0.2em"}}>Email:</label>
+                <input type="text" id="email" name="email" value={email} onChange={handleEmailChange}/>
+                <label style={{margin: "0.2em"}}>First Name:</label>
+                <input type="text" id="name" name="name" value={fName} onChange={handlefNameChange}/>  
+                <label style={{margin: "0.2em"}}>Last Name:</label>
+                <input type="text" id="name" name="name" value={lName} onChange={handlelNameChange}/>  
+                <label style={{margin: "0.2em"}}>Postcode:</label>
+                <input type="text" id="email" name="postcode" value={postcode} onChange={handlePostCodeChange}/> 
                 <Link to = '/CustomerList' onClick={handleSubmit}>
-                    <input type="submit" value="Edit" className="margin2"/>
+                    <input type="submit" value="Edit" className="loginBtns"/>
                 </Link>
             </form>
+            <p>
+              Please edit any of the fields you wish to modify.
+            </p>            
+          </section>
         </div>
     )
 }

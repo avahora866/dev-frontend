@@ -29,7 +29,7 @@ class Admin extends Component {
         return (
             <div><Navigation /> 
                 <div>
-                    <h2>Admin List</h2>
+                    <h2 style={{color: "#2d68e3"}}>Admin List</h2>
                     <div className="grid">{register}</div>
                     <Link to='/AddAdmin'>
                         <button className="margin2">Add Admin</button>

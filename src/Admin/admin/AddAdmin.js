@@ -53,22 +53,26 @@ function AddAdmin() {
 
     return (
         <div><Navigation />
-            <form className="boxColumn">
-                <label>First Name:</label>
-                <input className="paddingBottom" type="text" id="fName" name="fName" value={fName} onChange={handlefNameChange}/> 
-                <label>Last Name:</label>
-                <input className="paddingBottom" type="text" id="lName" name="lName" value={lName} onChange={handlelNameChange}/> 
-                <label>Email:</label>
-                <input className="paddingBottom" type="text" id="email" name="email" value={email} onChange={handleEmailChange}/>
-                <label>Username:</label>
-                <input className="paddingBottom" type="text" id="uName" name="uName" value={userName} onChange={handleUserNameChange}/>
-                <label>Password:</label>
-                <input className="paddingBottom" type="text" id="pass" name="pass" value={password} onChange={handlePassChange}/>
-                <Link to="/AdminList" onClick={handleSubmit}>
-                    <input type="submit" value="Add Admin" className="margin2"/>
-                </Link>
-                    
-            </form>
+          <section className="sectionAdm">
+              <form className="boxColumn">
+                  <label style={{margin: "0.2em"}}>First Name:</label>
+                  <input type="text" id="fName" name="fName" value={fName} onChange={handlefNameChange}/> 
+                  <label style={{margin: "0.2em"}}>Last Name:</label>
+                  <input type="text" id="lName" name="lName" value={lName} onChange={handlelNameChange}/> 
+                  <label style={{margin: "0.2em"}}>Email:</label>
+                  <input type="text" id="email" name="email" value={email} onChange={handleEmailChange}/>
+                  <label style={{margin: "0.2em"}}>Username:</label>
+                  <input type="text" id="uName" name="uName" value={userName} onChange={handleUserNameChange}/>
+                  <label style={{margin: "0.2em"}}>Password:</label>
+                  <input type="text" id="pass" name="pass" value={password} onChange={handlePassChange}/>
+                  <Link to="/AdminList" onClick={handleSubmit}>
+                      <input type="submit" value="Add Admin" className="loginBtns"/>
+                  </Link>
+              </form>
+              <p>
+                Please fill in all of the fields to create a new admin.
+              </p>
+          </section>
         </div>
     )
 }

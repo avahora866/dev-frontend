@@ -16,19 +16,19 @@ function SingleAdmin({admin}) {
         window.location.reload()
     }
     return (
-        <section className="boxColumnSingle">
-                <label className="paddingBottom">ID: {admin.userId} </label>
-                <label className="paddingBottom">First Name: {admin.fName} </label>
-                <label className="paddingBottom">Last Name: {admin.lName} </label>
-                <label className="paddingBottom">Email: {admin.email} </label>
-                <label className="paddingBottom">Username: {admin.username} </label> 
-                <label className="paddingBottom">Password: {admin.password} </label> 
-                <span>
-                    <Link to={{pathname:"/EditAdmin", data:adm}}>
-                        <button className="margin">Edit</button>
-                    </Link>
-                    <button onClick={removeAdmin} className="margin">Remove</button>
-                </span>
+        <section className="admStylingItem">
+            <label>ID: {admin.userId} </label>
+            <label>First Name: {admin.fName} </label>
+            <label>Last Name: {admin.lName} </label>
+            <label>Email: {admin.email} </label>
+            <label>Username: {admin.username} </label> 
+            <label>Password: {admin.password} </label> 
+            <div className="boxRow">
+                <Link to={{pathname:"/EditAdmin", data:adm}}>
+                    <button style={{margin: "0.2em"}}>Edit</button>
+                </Link>
+                <button onClick={removeAdmin}>Remove</button>
+            </div>
         </section>
     )
 }

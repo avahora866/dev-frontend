@@ -61,22 +61,27 @@ function EditAdmins() {
     }
     return (
         <div><Navigation />
+        <section className="sectionAdm">
             <form className="boxColumn">
-                <label className="paddingBottom">Admin Id: {adminId}</label>
-                <label>First Name: </label>
-                <input  className="paddingBottom" type="text" name="name" value={fName} onChange={handlefNameChange} /> 
-                <label >Last Name: </label>
-                <input  className="paddingBottom" type="text" name="name" value={lName} onChange={handlelNameChange} /> 
-                <label >Email:</label>
-                <input  className="paddingBottom" type="text" name="email" value={email} onChange={handleEmailChange} />
-                <label >Username:</label>
-                <input  className="paddingBottom" type="text" name="uName" value={userName} onChange={handleUserNameChange} />
-                <label >Password:</label>
-                <input  className="paddingBottom" type="text" name="pass" value={password} onChange={handlePassChange} />
+                <label style={{margin: "0.2em"}}>Admin Id: {adminId}</label>
+                <label style={{margin: "0.2em"}}>First Name: </label>
+                <input  type="text" name="name" value={fName} onChange={handlefNameChange} /> 
+                <label style={{margin: "0.2em"}}>Last Name: </label>
+                <input  type="text" name="name" value={lName} onChange={handlelNameChange} /> 
+                <label style={{margin: "0.2em"}}>Email:</label>
+                <input  type="text" name="email" value={email} onChange={handleEmailChange} />
+                <label style={{margin: "0.2em"}}>Username:</label>
+                <input  type="text" name="uName" value={userName} onChange={handleUserNameChange} />
+                <label style={{margin: "0.2em"}}>Password:</label>
+                <input type="text" name="pass" value={password} onChange={handlePassChange} />
                 <Link to="/AdminList" onClick={handleSubmit}> 
-                    <input type="submit" value="Edit" className="margin2"/>
+                    <input type="submit" value="Edit" className="loginBtns"/>
                 </Link>
             </form>
+            <p>
+              Please edit any of the fields you wish to modify.
+            </p>            
+          </section>            
         </div>
     )
 }

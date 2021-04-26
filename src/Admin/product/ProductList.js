@@ -24,7 +24,7 @@ class ProductList extends Component {
         return (
             <div><Navigation /> 
                 <div>
-                <h2>Product List</h2>
+                <h2 style={{color: "#2d68e3"}}>Product List</h2>
                     <div className="grid">{register}</div>
                     <Link to='/AddProduct'>
                         <button className="margin2">Add Product</button>

@@ -44,18 +44,23 @@ function EditProduct() {
 
     return (
         <div><Navigation />
+        <section className="sectionAdm">
             <form className="boxColumn">
-                <label className="paddingBottom">Product ID {productId}</label>
-                <label>Name:</label>
-                <input className="paddingBottom" type="text" value={name} onChange={handleNameChange}/> 
-                <label>Description:</label>
-                <input className="paddingBottom" type="text" value={description} onChange={handleDescriptionChange}/> 
-                <label>Price:</label>
-                <input className="paddingBottom" type="number" min="0" value={price} onChange={handlePriceChange}/> 
+                <label style={{margin: "0.2em"}}>Product Id: {productId}</label>
+                <label style={{margin: "0.2em"}}>Name:</label>
+                <input type="text" value={name} onChange={handleNameChange}/> 
+                <label style={{margin: "0.2em"}}>Description:</label>
+                <input type="text" value={description} onChange={handleDescriptionChange}/> 
+                <label style={{margin: "0.2em"}}>Price:</label>
+                <input type="number" min="0" value={price} onChange={handlePriceChange}/> 
                 <Link to='/ProductList' onClick={handleSubmit}>
-                    <input type="submit" value="Edit" className="margin2"/>
+                    <input type="submit" value="Edit" className="loginBtns"/>
                 </Link>
             </form>
+            <p>
+              Please edit any of the fields you wish to modify.
+            </p>            
+          </section>               
         </div>
     )
 }
