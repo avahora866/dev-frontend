@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import AddProduct from './Admin/product/AddProduct';
 import EditProduct from './Admin/product/EditProduct';
 import ProductList from './Admin/product/ProductList';
-import EditCustomer from './Admin/customer/editAndAddingCustomers/EditCustomer';
+import EditCustomer from './Admin/customer/EditCustomer';
 import Customer from './Admin/customer/Customer'
 import DropList from './Driver/driverHomePage/DropList'
 import Order from './Customer/currentOrder/Order'
@@ -17,7 +17,7 @@ import EditAdmins from './Admin/admin/EditAdmins';
 import EditDrivers from './Admin/driver/EditDrivers';
 import AddAdmin from './Admin/admin/AddAdmin';
 import AddDriver from './Admin/driver/AddDrivers';
-import AddCustomer from './Admin/customer/editAndAddingCustomers/AddCustomer';
+import AddCustomer from './Admin/customer/AddCustomer';
 
 function App() {
   return (

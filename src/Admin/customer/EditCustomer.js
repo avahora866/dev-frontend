@@ -1,7 +1,8 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import {Link, useLocation} from 'react-router-dom';
-import Navigation from '../../Navigation';
+import Navigation from '../Navigation';
+import '../.././Styles.css'
 
 
 function EditCustomer() {

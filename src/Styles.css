@@ -11,6 +11,26 @@ button {
     cursor: pointer;
 }
 
+input[type=text] {
+    padding:10px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+input[type=password] {
+    padding:10px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+input[type=number] {
+    padding:5px;
+    padding-top: 0.5em;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+
 .loginBtns {
     background-color: #7196e3;
     border: none;

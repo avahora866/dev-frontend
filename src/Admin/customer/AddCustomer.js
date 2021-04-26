@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
-import Navigation from '../../Navigation';
-import '../../../Styles.css'
+import Navigation from '../Navigation';
+import '../.././Styles.css'
 import axios from 'axios';
 
 
