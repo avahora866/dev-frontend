@@ -86,9 +86,9 @@ class LoginPage extends Component {
                     <input type="password" value={this.state.passWord} onChange={this.handlePassWordChange}  />
                 </span>
                 <span className="margin">
-                <input id="sub" type="submit" value="Login" className="margin"/>  
+                <input id="sub" type="submit" value="Login" className="loginBtns"/>  
                 <Link to='/CustomerRegistration'>
-                    <button>Register</button>
+                    <button className="loginBtns">Register</button>
                 </Link>
                 </span>
             </form>

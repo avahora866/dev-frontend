@@ -26,22 +26,6 @@ function SingleProduct({product}) {
     }
 
     return (
-    // <section className="boxColumn">
-    //     <span className="margin"> 
-    //         <p className="margin">{product.name}  £{product.price}</p>
-    //     </span>
-    //     <span className="margin">
-    //         <p className="margin">
-    //             {product.description}
-    //             <span className="margin">
-    //             <label className="margin">Quantity:</label>
-    //             <input id="qty" type="number" min="1" value={quantity} onChange={event => setQuantity(event.target.value)} className="numStyling"></input>
-    //             <button className="margin" onClick={updateProductQty}>Update</button>
-    //             <button className="margin" onClick={removeProduct}>Remove</button>
-    //             </span>
-    //         </p>
-    //     </span>
-    // </section>
     <section className="productStyling">
             <div className="boxColumn">
                 <label>{product.name}</label>
