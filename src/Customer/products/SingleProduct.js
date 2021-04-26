@@ -19,20 +19,19 @@ function SingleProduct({product}) {
     }
 
     return (
-        <section className="boxColumn">
-            <span className="margin">
-                <p className="margin">{product.name} £{product.price} </p>
-            </span>
-            <span className="margin">
-                <p className="margin">
-                        {product.description}
-                        <span className="margin">
-                        <input id="qty" type="number" min="0" onChange={event => setQuantity(event.target.value)} value={quantity} className="numStyling"></input>
-                        <button onClick={addToTrolly}>Add to Trolly</button>
-                    </span>
-                </p>
-            </span>
+        <section className="productStyling">
+            <div className="boxColumn">
+                <label>{product.name}</label>
+                <label>{product.description}</label>
+                <label>£{product.price}</label>
+            </div>
+            <div>
+                <input id="qty" type="number" min="0" onChange={event => setQuantity(event.target.value)} value={quantity} className="numStyling"></input>
+                <button onClick={addToTrolly}>Add to Trolly</button>
+            </div>
         </section>
+
+        
     )
 }
 
