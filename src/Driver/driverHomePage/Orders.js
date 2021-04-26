@@ -2,11 +2,11 @@ import React from 'react'
 
 function Orders({order}) {
     return (
-        <section className="boxColumn">
-            <label className="paddingBottom">Customer Id: {order.cstId}</label>
-            <label className="paddingBottom">Customer Name: {order.fName} {order.lName}</label>
-            <label className="paddingBottom">Customer Email: {order.email}</label>
-            <label className="paddingBottom">Post Code: {order.postcode}</label>
+        <section className="cstStyling">
+            <label style={{padding: "0.2em"}}>Customer Id: {order.cstId}</label>
+            <label style={{padding: "0.2em"}}>Customer Name: {order.fName} {order.lName}</label>
+            <label style={{padding: "0.2em"}}>Customer Email: {order.email}</label>
+            <label style={{padding: "0.2em"}}>Post Code: {order.postcode}</label>
         </section>
     )
     }

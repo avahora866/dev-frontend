@@ -93,8 +93,8 @@ class LoginPage extends Component {
                 </span>
             </form>
             <article className="headings">
-                <h1 style={{ color: '#ab4bde' }}>Welcome to Milk4U</h1>
-                <h2 style={{ color: '#ab4bde' }}>Feel free to log in or register anytime.</h2>
+                <h1 style={{ color: '#2d68e3' }}>Welcome to Milk4U</h1>
+                <h2 style={{ color: '#2d68e3' }}>Feel free to log in or register anytime.</h2>
             </article>
             </section>
 

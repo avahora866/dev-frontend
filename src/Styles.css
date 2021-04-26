@@ -63,6 +63,16 @@ button {
     margin: 0.5em;
 }
 
+.cstStyling {
+    display: grid;
+    background-color: #aabde6;
+    border-radius: 15%;
+    grid-auto-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    margin: 0.5em;
+    padding: 2em;
+}
+
 .margin {
     margin: 0.2em;
 }
@@ -100,3 +110,5 @@ button {
 .margin2 {
     margin: 0.5em;
 }
+
+
