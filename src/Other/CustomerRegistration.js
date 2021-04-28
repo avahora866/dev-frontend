@@ -85,23 +85,29 @@ class CustomerRegistration extends Component {
     render() {
         return (
             <div><Navigation />
+            <section className="sectionAdm">
                 <form className="boxColumn" onSubmit={this.handleSubmit}>
-                <label htmlFor="uName">Username:</label>
+                    <label style={{margin: "0.2em"}}>Username:</label>
                     <input type="text" id="uName" name="uName" value={this.state.userName} onChange={this.handleUserNameChange}/>
-                    <label htmlFor="pass">Password:</label>
+                    <label style={{margin: "0.2em"}}>Password:</label>
                     <input type="text" id="pass" name="pass" value={this.state.password} onChange={this.handlePassChange}/>
-                    <label htmlFor="fName">First Name:</label>
+                    <label style={{margin: "0.2em"}}>First Name:</label>
                     <input type="text" id="fName" name="name" value={this.state.fName} onChange={this.handlefNameChange}/>  
-                    <label htmlFor="lName">Last Name:</label>
+                    <label style={{margin: "0.2em"}}>Last Name:</label>
                     <input type="text" id="lName" name="name" value={this.state.lName} onChange={this.handlelNameChange}/>  
-                    <label htmlFor="email">Email:</label>
+                    <label style={{margin: "0.2em"}}>Email:</label>
                     <input type="text" id="email" name="email" value={this.state.email} onChange={this.handleEmailChange}/>
-                    <label htmlFor="postcode">Post Code:</label>
+                    <label style={{margin: "0.2em"}}>Post Code:</label>
                     <input type="text" id="postcode" name="postcode" value={this.state.postcode} onChange={this.handlePostcodeChange}/>
-                    <label htmlFor="dateOfBirth">D.O.B:</label>
-                    <input type="date" id="start" name="trip-start" value={this.state.selectedDay} onChange={this.handleDayClick}></input>
-                    <input type="submit" value="Register" />
+                    <label style={{margin: "0.2em"}}>D.O.B:</label>
+                    <input style={{margin: "0.2em"}} type="date" id="start" name="trip-start" value={this.state.selectedDay} onChange={this.handleDayClick}></input>
+                    <input className="loginBtns" type="submit" value="Register" />
                 </form>
+                <p>
+                    Please fill in all of the fields to create a new customer.
+                    NOTE: the customer added must be of 18 years of age.
+                </p>                
+              </section>
             </div>
         )
     }
