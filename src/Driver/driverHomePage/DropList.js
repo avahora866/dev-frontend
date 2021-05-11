@@ -19,7 +19,11 @@ class DropList extends Component {
         if(this.state.orderList.length === 0){
             alert("There is no drop list to print")
         }else{
-            axios.get('http://localhost:9090/milk4u/printDroplist')
+            axios.get('http://localhost:9090/milk4u/printDroplist', {
+                params: {
+                    id: sessionStorage.getItem('UserId')
+                }
+            })
         }
     }
 
